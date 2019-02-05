@@ -1,2 +1,0 @@
-# WTLT
-whatsthelatest.today
