@@ -1,0 +1,29 @@
+/* Controls the stylistic properties of the header */
+.header-wrapper {
+    background: #eef2f3;  /* fallback for old browsers */
+    min-height: 25vh;
+    border: 1px solid #aaa
+
+}
+
+/* Controls the top group of buttons */
+.header-top-menuContainer {
+    
+    text-align: right;
+    flex-direction: row;
+    margin: auto;
+}
+
+/* Controls the subject group of buttons */
+.header-bottom-menuContainer {
+    display: flex;
+}
+
+.header-top-buttons {
+}
+
+.header-bottom-buttons {
+    flex: 1;
+}
+
+
