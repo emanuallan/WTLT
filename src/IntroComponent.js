@@ -47,49 +47,9 @@ export class IntroComponent extends React.Component {
         console.log("RENDER CALLED\nCURRENT AMOUNT OF RESULTS " + this.state.totalResults);
         console.log(this.state.articles);
         return (
-
-
-
-
-            /* Header Component */
             <React.Fragment>
-
-
-
-
-
-
-
-                <div className="header-wrapper">
-                    <Grid container>
-                        <Grid item xs={12} style={{ marginTop: 5, marginRight: 5 }}>
-                            <div className="header-top-menuContainer">
-                                <Button variant="text" size="small" className="header-top-buttons" style={{ textTransform: 'none' }}> Home </Button>
-                                <Button variant="text" size="small" className="header-top-buttons" style={{ textTransform: 'none' }}> Forum </Button>
-                                <Button variant="text" size="small" className="header-top-buttons" style={{ textTransform: 'none' }}> Chat </Button>
-                                <Button variant="text" size="small" className="header-top-buttons" style={{ textTransform: 'none' }}> About </Button>
-                                <Button variant="text" size="small" className="header-top-buttons" style={{ textTransform: 'none' }}> FAQ </Button>
-                                <Button variant="text" size="small" className="header-top-buttons" style={{ textTransform: 'none' }}> Contact Us </Button>
-                            </div>
-                        </Grid>
-
-                        <Grid item xs={12} style={{ marginTop: 135 }}>
-                            <div className="header-bottom-menuContainer">
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none' }}> Math </Button>
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none' }}> History </Button>
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none' }}> Writing </Button>
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none' }}> French </Button>
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none' }}> Science </Button>
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none' }}> Other </Button>
-                            </div>
-                        </Grid>
-                    </Grid>
-                </div>
-
-
-
-
                 <Button variant="outlined" onClick={() => { this.setState({ loading: true }) }}> Load Info </Button>
+                {/* NOTE: AUTHOR WON'T APPEAR IF THE API DOES NOT RETURN AN AUTHOR */}
                 {this.state.articles && <p>{this.state.articles[1].author}</p>}
                 {this.state.totalResults && <p>{this.state.totalResults}</p>}
             </React.Fragment>
