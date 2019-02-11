@@ -1,17 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import IntroComponent from "./IntroComponent"
-import './style/style.css';
-import Header from "./Header"
-import TitleComponent from './TitleComponent';
+import React from "react";
+import ReactDOM from "react-dom";
+import HomePage from "./pages/HomePage";
+import "./style/style.css";
 
 const Index = () => (
     <React.Fragment>
-        <Header />
-        <TitleComponent />
-        <IntroComponent />
+        <HomePage />
     </React.Fragment>
 );
 
-ReactDOM.render(<Index />, document.getElementById('root'));
-
+ReactDOM.render(<Index />, document.getElementById("root"));
