@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import TitleComponent from "./TitleComponent";
 import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 
@@ -55,6 +56,7 @@ export class ContentComponent extends React.Component {
         console.log(this.state.articles);
         return (
             <React.Fragment>
+                <TitleComponent topic="Math" />
                 <Button
                     variant="outlined"
                     onClick={() => {

@@ -4,6 +4,10 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 
 export class TitleComponent extends React.Component {
+    constructor(props) {
+        super(props);
+        this.props = props;
+    }
     render() {
         return (
             <React.Fragment>
@@ -16,7 +20,7 @@ export class TitleComponent extends React.Component {
                     </div>
 
                     <div className="title-text">
-                        <Typography variant="h2"> History </Typography>
+                        <Typography variant="h2"> {this.props.topic} </Typography>
                     </div>
                 </div>
             </React.Fragment>
