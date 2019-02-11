@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import TitleComponent from "./TitleComponent";
+import { connect } from "react-redux";
+import { setTopic } from "../redux/topics-reducer";
 import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 
@@ -18,7 +20,8 @@ export class ContentComponent extends React.Component {
         this.state = {
             totalResults: null,
             loading: false,
-            articles: undefined
+            articles: undefined,
+            topic: ""
         };
     }
 
@@ -54,9 +57,10 @@ export class ContentComponent extends React.Component {
             "RENDER CALLED\nCURRENT AMOUNT OF RESULTS " + this.state.totalResults
         );
         console.log(this.state.articles);
+
         return (
             <React.Fragment>
-                <TitleComponent topic="Math" />
+                <TitleComponent topic={this.state.topic} />
                 <Button
                     variant="outlined"
                     onClick={() => {
@@ -74,4 +78,22 @@ export class ContentComponent extends React.Component {
     }
 }
 
-export default ContentComponent;
+const mapStateToProps = state => {
+    return {
+        math: state.math,
+        history: state.history
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setTopic: topic => {
+            setTopic(topic)(dispatch);
+        }
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(ContentComponent);

@@ -1,8 +1,30 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
+import { connect } from "react-redux";
+import { setTopic } from "../redux/topics-reducer";
 
 export class Header extends React.Component {
+    constructor(props) {
+        super(props);
+        console.log(this.props);
+        this.state = {
+            topic: ""
+        };
+        this.onHistoryClick = this.onHistoryClick.bind(this);
+        this.onMathClick = this.onMathClick.bind(this);
+    }
+
+    onHistoryClick() {
+        // alert("history");
+        this.props.setTopic("history");
+    }
+
+    onMathClick() {
+        // alert("math");
+        this.props.setTopic("math");
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -73,6 +95,7 @@ export class Header extends React.Component {
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
+                                    onClick={this.onMathClick}
                                 >
                                     {" "}
                                     Math{" "}
@@ -81,6 +104,7 @@ export class Header extends React.Component {
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
+                                    onClick={this.onHistoryClick}
                                 >
                                     {" "}
                                     History{" "}
@@ -126,4 +150,23 @@ export class Header extends React.Component {
     }
 }
 
-export default Header;
+const mapStateToProps = state => {
+    return {
+        isMath: state.isMath,
+        isHistory: state.isHistory,
+        isChanging: state.isChanging
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        setTopic: topic => {
+            setTopic(topic)(dispatch);
+        }
+    };
+};
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Header);

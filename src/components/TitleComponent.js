@@ -1,9 +1,10 @@
 import React from "react";
 import { Typography } from "@material-ui/core";
+import { connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 
-export class TitleComponent extends React.Component {
+export default class TitleComponent extends React.Component {
     constructor(props) {
         super(props);
         this.props = props;
@@ -27,5 +28,3 @@ export class TitleComponent extends React.Component {
         );
     }
 }
-
-export default TitleComponent;
