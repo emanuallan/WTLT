@@ -1,46 +1,51 @@
 import React from 'react';
 import Button from '@material-ui/core/Button';
-import { Typography } from '@material-ui/core';
-import Grid from '@material-ui/core/Grid';
 
 /* API URL for request */
-var url = 'https://newsapi.org/v2/top-headlines?' +
-    'country=us&' +
-    'apiKey=9e6c4875383b47c19201e7694edc4eb7';
-var req = new Request(url);
+// var url = 'https://newsapi.org/v2/top-headlines?' +
+//     'q=abortion&' +
+//     'apiKey=9e6c4875383b47c19201e7694edc4eb7';
+// var req = new Request(url);
 
 /* State Configuration */
 export class IntroComponent extends React.Component {
     constructor(properties) {
         super(properties);
         this.state = {
-            totalResults: null,
             loading: false,
+
+            selectedTopic: "abortion",
+            totalResults: null,
             articles: undefined
         }
     }
 
     componentDidMount() {
+        var req = new Request(`https://newsapi.org/v2/top-headlines?q=${this.state.selectedTopic}&apiKey=9e6c4875383b47c19201e7694edc4eb7`);
         fetch(req)
             .then(response => response.json())
             .then(data => this.setState({
+                loading: false,
+
                 totalResults: data.totalResults,
-                articles: data.articles,
-                loading: false
+                articles: data.articles
             }));
     }
 
     componentDidUpdate() {
         if (this.state.loading) {
+            var req = new Request(`https://newsapi.org/v2/top-headlines?q=${this.state.selectedTopic}&apiKey=9e6c4875383b47c19201e7694edc4eb7`);
             fetch(req)
                 .then(response => response.json())
                 .then(data => this.setState({
-                    totalResults: data.totalResults,
                     loading: false,
+
+                    totalResults: data.totalResults,
                     articles: data.articles
                 }));
         }
     }
+
 
     /* Rendering Configuration (doesn't work though there's no error in the Console) */
     render() {
@@ -48,10 +53,18 @@ export class IntroComponent extends React.Component {
         console.log(this.state.articles);
         return (
             <React.Fragment>
-                <Button variant="outlined" onClick={() => { this.setState({ loading: true }) }}> Load Info </Button>
-                {/* NOTE: AUTHOR WON'T APPEAR IF THE API DOES NOT RETURN AN AUTHOR */}
-                {this.state.articles && <p>{this.state.articles[1].author}</p>}
-                {this.state.totalResults && <p>{this.state.totalResults}</p>}
+                <div className="infoBox">
+                    {/* NOTE: CERTAIN INFO WON'T APPEAR IF THE API DOES NOT RETURN A VALUE */}
+                    {this.state.totalResults && <p>Amount of Results: {this.state.totalResults}</p>}
+                    {this.state.articles && <p>Source: {this.state.articles[0].source.name}</p>}
+                    {this.state.articles && <p>Article Title: {this.state.articles[0].title}</p>}
+                    {this.state.articles && <p>Author: {this.state.articles[0].author}</p>}
+                    {this.state.articles && <p>Description: {this.state.articles[0].description}</p>}
+                    {this.state.articles && <p>published At: {this.state.articles[0].publishedAt}</p>}
+                    {this.state.articles && <p>URL: {this.state.articles[0].url}</p>}
+                </div>
+
+                <Button variant="outlined" onClick={() => { this.setState({ selectedTopic: "immigration", loading: true }) }}> Immigration Info </Button>
             </React.Fragment>
         );
     }

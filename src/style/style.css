@@ -1,9 +1,9 @@
 /* Controls the stylistic properties of the header */
 .header-wrapper {
-    background: #505050;  /*#eef2f3  /* fallback for old browsers */
+    /* //background: #505050;  /*#eef2f3  fallback for old browsers */
     min-height: 25vh;
     border: 1px solid #aaa;
-    /* background: url('../assets/Banner.jpg'); */
+    background: url('../assets/Banner.jpg'); 
 }
 
 /* Controls the top group of buttons */
@@ -22,6 +22,7 @@
 
 .header-top-buttons {
 }
+
 .header-bottom-buttons {
     flex: 1;
 }
@@ -45,6 +46,14 @@
     margin-right:2%;
 }
 
+.infoBox {
+    background: #6baacf;
+    padding: 20px;
+}
+
+.infoBox p{
+    color: whitesmoke;
+}
 
 
 

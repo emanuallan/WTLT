@@ -1,11 +1,7 @@
 import React from 'react';
 import { Typography } from '@material-ui/core';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 
 export class TitleComponent extends React.Component {
-
-
     render() {
         return (
             <React.Fragment>

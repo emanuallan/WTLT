@@ -21,11 +21,11 @@ export class Header extends React.Component {
 
                         <Grid item xs={12} style={{ marginTop: 135 }}>
                             <div className="header-bottom-menuContainer">
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }}> Math </Button>
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }}> History </Button>
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }}> Writing </Button>
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }}> French </Button>
-                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }}> Science </Button>
+                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }} onClick={() => { this.setState({ topicSelected: "abortion", loading: true }) }}> Abortion </Button>
+                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }} onClick={() => { this.setState({ topicSelected: "immigration", loading: true }) }}> Immigration </Button>
+                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }} onClick={() => { this.setState({ topicSelected: "lgbt", loading: true }) }}> LGBTQA </Button>
+                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }} onClick={() => { this.setState({ topicSelected: "marijuana", loading: true }) }}> Marijuana </Button>
+                                <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }} onClick={() => { this.setState({ topicSelected: "gun", loading: true }) }}> Gun Policy </Button>
                                 <Button variant="text" className="header-bottom-buttons" style={{ textTransform: 'none', color: '#505050' }}> Other </Button>
                             </div>
                         </Grid>
