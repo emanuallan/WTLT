@@ -13,16 +13,36 @@ export class Header extends React.Component {
         };
         this.onHistoryClick = this.onHistoryClick.bind(this);
         this.onMathClick = this.onMathClick.bind(this);
+        this.onWritingClick = this.onWritingClick.bind(this);
+        this.onFrenchClick = this.onFrenchClick.bind(this);
+        this.onScienceClick = this.onScienceClick.bind(this);
+        this.onOtherClick = this.onOtherClick.bind(this);
     }
 
     onHistoryClick() {
         // alert("history");
-        this.props.setTopic("history");
+        this.props.setTopic("History");
     }
 
     onMathClick() {
         // alert("math");
-        this.props.setTopic("math");
+        this.props.setTopic("Math");
+    }
+
+    onWritingClick() {
+        this.props.setTopic("Writing");
+    }
+
+    onFrenchClick() {
+        this.props.setTopic("French");
+    }
+
+    onScienceClick() {
+        this.props.setTopic("Science");
+    }
+
+    onOtherClick() {
+        this.props.setTopic("Other");
     }
 
     render() {
@@ -113,6 +133,7 @@ export class Header extends React.Component {
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
+                                    onClick={this.onWritingClick}
                                 >
                                     {" "}
                                     Writing{" "}
@@ -121,6 +142,7 @@ export class Header extends React.Component {
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
+                                    onClick={this.onFrenchClick}
                                 >
                                     {" "}
                                     French{" "}
@@ -129,6 +151,7 @@ export class Header extends React.Component {
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
+                                    onClick={this.onScienceClick}
                                 >
                                     {" "}
                                     Science{" "}
@@ -137,6 +160,7 @@ export class Header extends React.Component {
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
+                                    onClick={this.onOtherClick}
                                 >
                                     {" "}
                                     Other{" "}
@@ -152,9 +176,7 @@ export class Header extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        isMath: state.isMath,
-        isHistory: state.isHistory,
-        isChanging: state.isChanging
+        topic: state.topic
     };
 };
 

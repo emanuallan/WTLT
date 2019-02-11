@@ -1,36 +1,12 @@
-const MATH = "MATH";
-const HISTORY = "HISTORY";
-const WRITING = "FRENCH";
-const SCIENCE = "SCIENCE";
-const OTHER = "OTHER";
+const SET_TOPIC = "SET_TOPIC";
 
-function math(isMath) {
-    return { type: MATH, isMath };
+function topic(newTopic) {
+    return { type: SET_TOPIC, newTopic };
 }
 
-function history(isHistory) {
-    return { type: HISTORY, isHistory };
-}
-
-function writing() {
-    return {};
-}
-
-function science() {
-    return {};
-}
-
-function other() {
-    return {};
-}
-
-export function setTopic(topic) {
+export function setTopic(newTopic) {
     return dispatch => {
-        if (topic === "math") {
-            dispatch(math(true));
-        } else if (topic === "history") {
-            dispatch(history(true));
-        }
+        dispatch(topic(newTopic));
     };
 }
 
@@ -39,10 +15,8 @@ export default function topics_reducer(
     action
 ) {
     switch (action.type) {
-        case MATH:
-            return Object.assign({}, state);
-        case HISTORY:
-            return Object.assign({}, state);
+        case SET_TOPIC:
+            return Object.assign({}, state, { topic: action.newTopic });
         default:
             return state;
     }

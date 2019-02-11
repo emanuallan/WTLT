@@ -15,13 +15,12 @@ var req = new Request(url);
 
 /* State Configuration */
 export class ContentComponent extends React.Component {
-    constructor(properties) {
-        super(properties);
+    constructor(props) {
+        super(props);
         this.state = {
             totalResults: null,
             loading: false,
-            articles: undefined,
-            topic: ""
+            articles: undefined
         };
     }
 
@@ -38,6 +37,8 @@ export class ContentComponent extends React.Component {
     }
 
     componentDidUpdate() {
+        console.log("props: ");
+        console.log(this.props);
         if (this.state.loading) {
             fetch(req)
                 .then(response => response.json())
@@ -57,10 +58,10 @@ export class ContentComponent extends React.Component {
             "RENDER CALLED\nCURRENT AMOUNT OF RESULTS " + this.state.totalResults
         );
         console.log(this.state.articles);
-
+        let topic = this.props.topic;
         return (
             <React.Fragment>
-                <TitleComponent topic={this.state.topic} />
+                <TitleComponent topic={topic} />
                 <Button
                     variant="outlined"
                     onClick={() => {
@@ -80,8 +81,7 @@ export class ContentComponent extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        math: state.math,
-        history: state.history
+        topic: state.topic
     };
 };
 
