@@ -1,6 +1,6 @@
 /* Controls the stylistic properties of the header */
 .header-wrapper {
-    background: #505050;  /*#eef2f3  /* fallback for old browsers */
+    background: url('../assets/Banner.jpg');   /*#eef2f3  /* fallback for old browsers */
     min-height: 25vh;
     border: 1px solid #aaa;
     /* background: url('../assets/Banner.jpg'); */
