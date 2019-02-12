@@ -10,10 +10,7 @@ export function setTopic(newTopic) {
     };
 }
 
-export default function topics_reducer(
-    state = { isMath: true, isHistory: false },
-    action
-) {
+export default function topics_reducer(state = { topic: "math" }, action) {
     switch (action.type) {
         case SET_TOPIC:
             return Object.assign({}, state, { topic: action.newTopic });
