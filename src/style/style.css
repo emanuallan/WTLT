@@ -1,7 +1,5 @@
 /* Controls the stylistic properties of the header */
 .header-wrapper {
-    background: url('../assets/Banner.jpg');   /*#eef2f3  /* fallback for old browsers */
-    min-height: 25vh;
     border: 1px solid #aaa;
     /* background: url('../assets/Banner.jpg'); */
 }
@@ -10,7 +8,8 @@
 .header-top-menuContainer { 
     text-align: right;
     flex-direction: row;
-    margin: auto;
+    position: absolute;
+    right: 1rem;
 }
 
 /* Controls the subject group of buttons */
@@ -45,16 +44,21 @@
     margin-right:2%;
 }
 
+.news-container {
+    min-height: 40%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 20px;
+    padding: 1rem;
+    color: whitesmoke;
+}
+
 .lib-news-container {
-    height:100%;
-    width:90%;
-    margin: 3%;
-    background: #6baacf 
+    background: #6baacf;
 }
 
 .cons-news-container {
-    height:100%;
-    width:90%;
-    margin: 3%;
-    background: #da5252
+    background: #da5252;
 }

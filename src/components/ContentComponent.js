@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import TitleComponent from "./TitleComponent";
+import ArticleComponent from "./ArticleComponent";
 import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 import { Typography } from "@material-ui/core";
@@ -72,10 +73,13 @@ export class ContentComponent extends React.Component {
                     {" "}
                     Load Info{" "}
                 </Button>
-
                 <Grid container>
+                    <Grid item xs={12} style={{ textAlign: "center" }}>
+                        {this.state.totalResults && <p>Amount of Results: {this.state.totalResults}</p>}
+                    </Grid>
+
                     <Grid item xs={6} style={{ marginTop: 5 }}>
-                        <div className="lib-news-container">
+                        {/* <div className="news-container lib-news-container">
                             {this.state.totalResults && <p>Amount of Results: {this.state.totalResults}</p>}
                             {this.state.articles && <p>Source: {this.state.articles[0].source.name}</p>}
                             {this.state.articles && <p>Article Title: {this.state.articles[0].title}</p>}
@@ -83,29 +87,53 @@ export class ContentComponent extends React.Component {
                             {this.state.articles && <p>Description: {this.state.articles[0].description}</p>}
                             {this.state.articles && <p>published At: {this.state.articles[0].publishedAt}</p>}
                             {this.state.articles && <p>URL: {this.state.articles[0].url}</p>}
-                        </div>
-                        <div className="lib-news-container">
-                            <h1> HELLO </h1>
-                        </div>
-                        <div className="lib-news-container">
-                            <h1> HELLO </h1>
-                        </div>
-                        <div className="lib-news-container">
-                            <h1> HELLO </h1>
-                        </div>
+                        </div> */}
+
+                        {
+                            this.state.articles &&
+                            <ArticleComponent
+                                article={this.state.articles[0]}
+                                className="lib-news-container"
+                            />
+                        }
+
+                        {
+                            this.state.articles &&
+                            <ArticleComponent
+                                article={this.state.articles[1]}
+                                className="lib-news-container"
+                            />
+                        }
+
+                        {
+                            this.state.articles &&
+                            <ArticleComponent
+                                article={this.state.articles[2]}
+                                className="lib-news-container"
+                            />
+                        }
+
+                        {
+                            this.state.articles &&
+                            <ArticleComponent
+                                article={this.state.articles[3]}
+                                className="lib-news-container"
+                            />
+                        }
+
                     </Grid>
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
-                        <div className="cons-news-container">
+                        <div className="news-container cons-news-container">
                             <h1> HELLO </h1>
                         </div>
-                        <div className="cons-news-container">
+                        <div className="news-container cons-news-container">
                             <h1> HELLO </h1>
                         </div>
-                        <div className="cons-news-container">
+                        <div className="news-container cons-news-container">
                             <h1> HELLO </h1>
                         </div>
-                        <div className="cons-news-container">
+                        <div className="news-container cons-news-container">
                             <h1> HELLO </h1>
                         </div>
                     </Grid>
