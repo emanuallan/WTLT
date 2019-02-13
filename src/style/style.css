@@ -45,7 +45,7 @@
 }
 
 .news-container {
-    min-height: 40%;
+    min-height: 24%;
     margin-top: 2rem;
     margin-bottom: 2rem;
     margin-left: 1rem;
@@ -53,6 +53,7 @@
     border-radius: 20px;
     padding: 1rem;
     color: whitesmoke;
+    border:1px #505050 solid
 }
 
 .lib-news-container {

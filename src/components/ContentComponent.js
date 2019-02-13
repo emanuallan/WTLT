@@ -64,18 +64,18 @@ export class ContentComponent extends React.Component {
             <React.Fragment>
                 <TitleComponent topic={topic} />
                 {/* NOTE: CERTAIN INFO WON'T APPEAR IF THE API DOES NOT RETURN A VALUE */}
-                <Button
-                    variant="outlined"
-                    onClick={() => {
-                        this.setState({ loading: true });
-                    }}
-                >
-                    {" "}
-                    Load Info{" "}
-                </Button>
                 <Grid container>
                     <Grid item xs={12} style={{ textAlign: "center" }}>
                         {this.state.totalResults && <p>Amount of Results: {this.state.totalResults}</p>}
+                        <Button
+                            variant="outlined"
+                            onClick={() => {
+                                this.setState({ loading: true });
+                            }}
+                        >
+                            {" "}
+                            Refresh{" "}
+                        </Button>
                     </Grid>
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
@@ -124,18 +124,34 @@ export class ContentComponent extends React.Component {
                     </Grid>
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
-                        <div className="news-container cons-news-container">
-                            <h1> HELLO </h1>
-                        </div>
-                        <div className="news-container cons-news-container">
-                            <h1> HELLO </h1>
-                        </div>
-                        <div className="news-container cons-news-container">
-                            <h1> HELLO </h1>
-                        </div>
-                        <div className="news-container cons-news-container">
-                            <h1> HELLO </h1>
-                        </div>
+                        {
+                            this.state.articles &&
+                            <ArticleComponent
+                                article={this.state.articles[4]}
+                                className="cons-news-container"
+                            />
+                        }
+                        {
+                            this.state.articles &&
+                            <ArticleComponent
+                                article={this.state.articles[5]}
+                                className="cons-news-container"
+                            />
+                        }
+                        {
+                            this.state.articles &&
+                            <ArticleComponent
+                                article={this.state.articles[6]}
+                                className="cons-news-container"
+                            />
+                        }
+                        {
+                            this.state.articles &&
+                            <ArticleComponent
+                                article={this.state.articles[7]}
+                                className="cons-news-container"
+                            />
+                        }
                     </Grid>
                 </Grid>
             </React.Fragment>
