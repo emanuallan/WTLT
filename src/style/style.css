@@ -45,6 +45,16 @@
     margin-right:2%;
 }
 
+.lib-news-container {
+    height:100%;
+    width:90%;
+    margin: 3%;
+    background: #6baacf 
+}
 
-
-
+.cons-news-container {
+    height:100%;
+    width:90%;
+    margin: 3%;
+    background: #da5252
+}

@@ -62,6 +62,7 @@ export class ContentComponent extends React.Component {
         return (
             <React.Fragment>
                 <TitleComponent topic={topic} />
+                {/* NOTE: CERTAIN INFO WON'T APPEAR IF THE API DOES NOT RETURN A VALUE */}
                 <Button
                     variant="outlined"
                     onClick={() => {
@@ -71,9 +72,44 @@ export class ContentComponent extends React.Component {
                     {" "}
                     Load Info{" "}
                 </Button>
-                {/* NOTE: AUTHOR WON'T APPEAR IF THE API DOES NOT RETURN AN AUTHOR */}
-                {this.state.articles && <p>{this.state.articles[1].author}</p>}
-                {this.state.totalResults && <p>{this.state.totalResults}</p>}
+
+                <Grid container>
+                    <Grid item xs={6} style={{ marginTop: 5 }}>
+                        <div className="lib-news-container">
+                            {this.state.totalResults && <p>Amount of Results: {this.state.totalResults}</p>}
+                            {this.state.articles && <p>Source: {this.state.articles[0].source.name}</p>}
+                            {this.state.articles && <p>Article Title: {this.state.articles[0].title}</p>}
+                            {this.state.articles && <p>Author: {this.state.articles[0].author}</p>}
+                            {this.state.articles && <p>Description: {this.state.articles[0].description}</p>}
+                            {this.state.articles && <p>published At: {this.state.articles[0].publishedAt}</p>}
+                            {this.state.articles && <p>URL: {this.state.articles[0].url}</p>}
+                        </div>
+                        <div className="lib-news-container">
+                            <h1> HELLO </h1>
+                        </div>
+                        <div className="lib-news-container">
+                            <h1> HELLO </h1>
+                        </div>
+                        <div className="lib-news-container">
+                            <h1> HELLO </h1>
+                        </div>
+                    </Grid>
+
+                    <Grid item xs={6} style={{ marginTop: 5 }}>
+                        <div className="cons-news-container">
+                            <h1> HELLO </h1>
+                        </div>
+                        <div className="cons-news-container">
+                            <h1> HELLO </h1>
+                        </div>
+                        <div className="cons-news-container">
+                            <h1> HELLO </h1>
+                        </div>
+                        <div className="cons-news-container">
+                            <h1> HELLO </h1>
+                        </div>
+                    </Grid>
+                </Grid>
             </React.Fragment>
         );
     }
