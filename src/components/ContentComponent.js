@@ -4,7 +4,6 @@ import TitleComponent from "./TitleComponent";
 import ArticleComponent from "./ArticleComponent";
 import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
-import { Typography } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
 
 /* API URL for request */
@@ -66,7 +65,9 @@ export class ContentComponent extends React.Component {
                 {/* NOTE: CERTAIN INFO WON'T APPEAR IF THE API DOES NOT RETURN A VALUE */}
                 <Grid container>
                     <Grid item xs={12} style={{ textAlign: "center" }}>
-                        {this.state.totalResults && <p>Amount of Results: {this.state.totalResults}</p>}
+                        {this.state.totalResults && (
+                            <p>Amount of Results: {this.state.totalResults}</p>
+                        )}
                         <Button
                             variant="outlined"
                             onClick={() => {
@@ -89,69 +90,60 @@ export class ContentComponent extends React.Component {
                             {this.state.articles && <p>URL: {this.state.articles[0].url}</p>}
                         </div> */}
 
-                        {
-                            this.state.articles &&
+                        {this.state.articles && (
                             <ArticleComponent
                                 article={this.state.articles[0]}
                                 className="lib-news-container"
                             />
-                        }
+                        )}
 
-                        {
-                            this.state.articles &&
+                        {this.state.articles && (
                             <ArticleComponent
                                 article={this.state.articles[1]}
                                 className="lib-news-container"
                             />
-                        }
+                        )}
 
-                        {
-                            this.state.articles &&
+                        {this.state.articles && (
                             <ArticleComponent
                                 article={this.state.articles[2]}
                                 className="lib-news-container"
                             />
-                        }
+                        )}
 
-                        {
-                            this.state.articles &&
+                        {this.state.articles && (
                             <ArticleComponent
                                 article={this.state.articles[3]}
                                 className="lib-news-container"
                             />
-                        }
-
+                        )}
                     </Grid>
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
-                        {
-                            this.state.articles &&
+                        {this.state.articles && (
                             <ArticleComponent
                                 article={this.state.articles[4]}
                                 className="cons-news-container"
                             />
-                        }
-                        {
-                            this.state.articles &&
+                        )}
+                        {this.state.articles && (
                             <ArticleComponent
                                 article={this.state.articles[5]}
                                 className="cons-news-container"
                             />
-                        }
-                        {
-                            this.state.articles &&
+                        )}
+                        {this.state.articles && (
                             <ArticleComponent
                                 article={this.state.articles[6]}
                                 className="cons-news-container"
                             />
-                        }
-                        {
-                            this.state.articles &&
+                        )}
+                        {this.state.articles && (
                             <ArticleComponent
                                 article={this.state.articles[7]}
                                 className="cons-news-container"
                             />
-                        }
+                        )}
                     </Grid>
                 </Grid>
             </React.Fragment>
