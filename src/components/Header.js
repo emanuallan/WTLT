@@ -12,38 +12,42 @@ export class Header extends React.Component {
         this.state = {
             topic: ""
         };
-        this.onHistoryClick = this.onHistoryClick.bind(this);
-        this.onMathClick = this.onMathClick.bind(this);
-        this.onWritingClick = this.onWritingClick.bind(this);
-        this.onFrenchClick = this.onFrenchClick.bind(this);
-        this.onScienceClick = this.onScienceClick.bind(this);
-        this.onOtherClick = this.onOtherClick.bind(this);
+        this.onTopic1Click = this.onTopic1Click.bind(this);
+        this.onTopic2Click = this.onTopic2Click.bind(this);
+        this.onTopic3Click = this.onTopic3Click.bind(this);
+        this.onTopic4Click = this.onTopic4Click.bind(this);
+        this.onTopic5Click = this.onTopic5Click.bind(this);
+        this.onTopic6Click = this.onTopic6Click.bind(this);
     }
 
-    onHistoryClick() {
+    onTopic1Click() {
         // alert("history");
-        this.props.setTopic("History");
+        this.props.setTopic("Latest");
     }
 
-    onMathClick() {
+    onTopic2Click() {
         // alert("math");
-        this.props.setTopic("Math");
+        this.props.setTopic("Immigration");
     }
 
-    onWritingClick() {
-        this.props.setTopic("Writing");
+    onTopic3Click() {
+        this.props.setTopic("LGBT");
     }
 
-    onFrenchClick() {
-        this.props.setTopic("French");
+    onTopic4Click() {
+        this.props.setTopic("Abortion");
     }
 
-    onScienceClick() {
-        this.props.setTopic("Science");
+    onTopic5Click() {
+        this.props.setTopic("Gun Control");
     }
 
-    onOtherClick() {
+    onTopic6Click() {
         this.props.setTopic("Other");
+    }
+
+    componentDidMount() {
+        this.onTopic1Click();
     }
 
     render() {
@@ -117,52 +121,52 @@ export class Header extends React.Component {
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
-                                    onClick={this.onMathClick}
+                                    onClick={this.onTopic1Click}
                                 >
                                     {" "}
-                                    Math{" "}
+                                    Latest{" "}
                                 </Button>
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
-                                    onClick={this.onHistoryClick}
+                                    onClick={this.onTopic2Click}
                                 >
                                     {" "}
-                                    History{" "}
+                                    Immigration{" "}
                                 </Button>
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
-                                    onClick={this.onWritingClick}
+                                    onClick={this.onTopic3Click}
                                 >
                                     {" "}
-                                    Writing{" "}
+                                    LGBT{" "}
                                 </Button>
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
-                                    onClick={this.onFrenchClick}
+                                    onClick={this.onTopic4Click}
                                 >
                                     {" "}
-                                    French{" "}
+                                    Abortion{" "}
                                 </Button>
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
-                                    onClick={this.onScienceClick}
+                                    onClick={this.onTopic5Click}
                                 >
                                     {" "}
-                                    Science{" "}
+                                    Gun Control{" "}
                                 </Button>
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "#505050" }}
-                                    onClick={this.onOtherClick}
+                                    onClick={this.onTopic6Click}
                                 >
                                     {" "}
                                     Other{" "}
