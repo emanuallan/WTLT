@@ -3,6 +3,7 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
+import Banner from "../assets/Banner.jpg";
 
 export class Header extends React.Component {
     constructor(props) {
@@ -50,66 +51,67 @@ export class Header extends React.Component {
             <React.Fragment>
                 <div className="header-wrapper">
                     <Grid container>
-                        <Grid item xs={12} style={{ marginTop: 5, marginRight: 5 }}>
-                            <div className="header-top-menuContainer">
-                                <Button
-                                    variant="text"
-                                    size="small"
-                                    className="header-top-buttons"
-                                    style={{ textTransform: "none", color: "#f5f5f5" }}
-                                >
-                                    {" "}
-                                    Home{" "}
-                                </Button>
-                                <Button
-                                    variant="text"
-                                    size="small"
-                                    className="header-top-buttons"
-                                    style={{ textTransform: "none", color: "#f5f5f5" }}
-                                >
-                                    {" "}
-                                    Forum{" "}
-                                </Button>
-                                <Button
-                                    variant="text"
-                                    size="small"
-                                    className="header-top-buttons"
-                                    style={{ textTransform: "none", color: "#f5f5f5" }}
-                                >
-                                    {" "}
-                                    Chat{" "}
-                                </Button>
-                                <Button
-                                    variant="text"
-                                    size="small"
-                                    className="header-top-buttons"
-                                    style={{ textTransform: "none", color: "#f5f5f5" }}
-                                >
-                                    {" "}
-                                    About{" "}
-                                </Button>
-                                <Button
-                                    variant="text"
-                                    size="small"
-                                    className="header-top-buttons"
-                                    style={{ textTransform: "none", color: "#f5f5f5" }}
-                                >
-                                    {" "}
-                                    FAQ{" "}
-                                </Button>
-                                <Button
-                                    variant="text"
-                                    size="small"
-                                    className="header-top-buttons"
-                                    style={{ textTransform: "none", color: "#f5f5f5" }}
-                                >
-                                    {" "}
-                                    Contact Us{" "}
-                                </Button>
-                            </div>
+                        <div className="header-top-menuContainer">
+                            <Button
+                                variant="text"
+                                size="small"
+                                className="header-top-buttons"
+                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                            >
+                                {" "}
+                                Home{" "}
+                            </Button>
+                            <Button
+                                variant="text"
+                                size="small"
+                                className="header-top-buttons"
+                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                            >
+                                {" "}
+                                Forum{" "}
+                            </Button>
+                            <Button
+                                variant="text"
+                                size="small"
+                                className="header-top-buttons"
+                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                            >
+                                {" "}
+                                Chat{" "}
+                            </Button>
+                            <Button
+                                variant="text"
+                                size="small"
+                                className="header-top-buttons"
+                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                            >
+                                {" "}
+                                About{" "}
+                            </Button>
+                            <Button
+                                variant="text"
+                                size="small"
+                                className="header-top-buttons"
+                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                            >
+                                {" "}
+                                FAQ{" "}
+                            </Button>
+                            <Button
+                                variant="text"
+                                size="small"
+                                className="header-top-buttons"
+                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                            >
+                                {" "}
+                                Contact Us{" "}
+                            </Button>
+                        </div>
+                        <Grid item xs={12}>
+                            <img src={Banner} style={{ width: "100%" }} />
                         </Grid>
 
-                        <Grid item xs={12} style={{ marginTop: 135 }}>
+                        <Grid item xs={12}>
                             <div className="header-bottom-menuContainer">
                                 <Button
                                     variant="text"
