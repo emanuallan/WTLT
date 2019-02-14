@@ -54,9 +54,6 @@ export class ContentComponent extends React.Component {
 
     /* Rendering Configuration (doesn't work though there's no error in the Console) */
     render() {
-        console.log(
-            "RENDER CALLED\nCURRENT AMOUNT OF RESULTS " + this.state.totalResults
-        );
         console.log(this.state.articles);
         let topic = this.props.topic;
         return (
