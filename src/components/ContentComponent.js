@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 import TitleComponent from "./TitleComponent";
 import ArticleComponent from "./ArticleComponent";
 import { connect } from "react-redux";
@@ -16,16 +17,25 @@ var req = new Request(url);
 /* State Configuration */
 export class ContentComponent extends React.Component {
     constructor(props) {
+        console.log("CONTENTCOMPONENT INSTANTIATED");
         super(props);
         this.state = {
             totalResults: null,
             loading: false,
-            articles: undefined
+            articles: undefined,
+            contentTopic: ""
         };
     }
 
-    componentDidMount() {
-        fetch(req)
+    componentWillReceiveProps = nextProps => {
+        // console.log(nextProps);
+        this.setState({ contentTopic: nextProps.topic });
+    };
+
+    componentDidMount = () => {
+        // console.log("actual fetch url: " + req.url + "&q=" + this.props.topic);
+        // console.log(this.props);
+        fetch(req.url + "&q=" + this.state.contentTopic)
             .then(response => response.json())
             .then(data =>
                 this.setState({
@@ -34,13 +44,15 @@ export class ContentComponent extends React.Component {
                     loading: false
                 })
             );
-    }
+    };
 
-    componentDidUpdate() {
-        console.log("props: ");
-        console.log(this.props);
+    componentDidUpdate = () => {
         if (this.state.loading) {
-            fetch(req)
+            console.log(
+                "actual fetch url: " + req.url + "&q=" + this.state.contentTopic
+            );
+            console.log(this.props);
+            fetch(req.url + "&q=" + this.props.topic)
                 .then(response => response.json())
                 .then(data =>
                     this.setState({
@@ -50,11 +62,12 @@ export class ContentComponent extends React.Component {
                     })
                 );
         }
-    }
+    };
 
     /* Rendering Configuration (doesn't work though there's no error in the Console) */
     render() {
-        console.log(this.state.articles);
+        // console.log(this.state.articles);
+        // console.log(req.url + "&q=" + this.props.topic);
         let topic = this.props.topic;
         return (
             <React.Fragment>
@@ -63,7 +76,9 @@ export class ContentComponent extends React.Component {
                 <Grid container>
                     <Grid item xs={12} style={{ textAlign: "center" }}>
                         {this.state.totalResults && (
-                            <p>Amount of Results: {this.state.totalResults}</p>
+                            <Typography variant="subtitle1">
+                                # of Hits: {this.state.totalResults}
+                            </Typography>
                         )}
                         <Button
                             variant="outlined"
@@ -87,7 +102,7 @@ export class ContentComponent extends React.Component {
                             {this.state.articles && <p>URL: {this.state.articles[0].url}</p>}
                         </div> */}
 
-                        {this.state.articles && (
+                        {/* {this.state.articles && (
                             <ArticleComponent
                                 article={this.state.articles[0]}
                                 className="lib-news-container"
@@ -113,11 +128,19 @@ export class ContentComponent extends React.Component {
                                 article={this.state.articles[3]}
                                 className="lib-news-container"
                             />
-                        )}
+                        )} */}
+
+                        {this.state.articles &&
+                            this.state.articles.map(art => (
+                                <ArticleComponent
+                                    article={art}
+                                    className="lib-news-container"
+                                />
+                            ))}
                     </Grid>
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
-                        {this.state.articles && (
+                        {/* {this.state.articles && (
                             <ArticleComponent
                                 article={this.state.articles[4]}
                                 className="cons-news-container"
@@ -140,7 +163,7 @@ export class ContentComponent extends React.Component {
                                 article={this.state.articles[7]}
                                 className="cons-news-container"
                             />
-                        )}
+                        )} */}
                     </Grid>
                 </Grid>
             </React.Fragment>

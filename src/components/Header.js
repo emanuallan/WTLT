@@ -7,8 +7,9 @@ import Banner from "../assets/Banner.jpg";
 
 export class Header extends React.Component {
     constructor(props) {
+        console.log("HEADER INSTANTIATED");
         super(props);
-        console.log(this.props);
+        // console.log(this.props);
         this.state = {
             topic: ""
         };
@@ -18,6 +19,7 @@ export class Header extends React.Component {
         this.onTopic4Click = this.onTopic4Click.bind(this);
         this.onTopic5Click = this.onTopic5Click.bind(this);
         this.onTopic6Click = this.onTopic6Click.bind(this);
+        this.onTopic1Click();
     }
 
     onTopic1Click() {
@@ -43,12 +45,10 @@ export class Header extends React.Component {
     }
 
     onTopic6Click() {
-        this.props.setTopic("Other");
+        this.props.setTopic("Trump");
     }
 
-    componentDidMount() {
-        this.onTopic1Click();
-    }
+    componentDidMount() {}
 
     render() {
         return (
