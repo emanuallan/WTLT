@@ -22,14 +22,14 @@ export class ContentComponent extends React.Component {
         this.state = {
             totalResults: null,
             loading: false,
-            articles: undefined,
-            contentTopic: ""
+            articles: undefined
+            // contentTopic: ""
         };
     }
 
     componentWillReceiveProps = nextProps => {
         // console.log(nextProps);
-        this.setState({ contentTopic: nextProps.topic });
+        this.setState({ contentTopic: nextProps.topic, loading: true });
     };
 
     componentDidMount = () => {
@@ -135,6 +135,7 @@ export class ContentComponent extends React.Component {
                                 <ArticleComponent
                                     article={art}
                                     className="lib-news-container"
+                                    key={this.state.articles.indexOf(art)}
                                 />
                             ))}
                     </Grid>
