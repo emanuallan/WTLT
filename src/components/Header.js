@@ -112,7 +112,11 @@ export class Header extends React.Component {
                             </Button>
                         </div>
                         <Grid item xs={12}>
-                            <img src={Banner} style={{ width: "100%" }} />
+                            <img
+                                src={Banner}
+                                style={{ width: "100%" }}
+                                alt="banner with Donald Trump and Nancy Pelosi"
+                            />
                         </Grid>
 
                         <Grid item xs={12}>
