@@ -41,14 +41,14 @@ export class Header extends React.Component {
     }
 
     onTopic5Click() {
-        this.props.setTopic("Gun Control");
+        this.props.setTopic("Shooting");
     }
 
     onTopic6Click() {
         this.props.setTopic("Trump");
     }
 
-    componentDidMount() {}
+    componentDidMount() { }
 
     render() {
         return (
@@ -60,7 +60,7 @@ export class Header extends React.Component {
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                                style={{ textTransform: "none", color: "#5F4BB6" }}
                             >
                                 {" "}
                                 Home{" "}
@@ -69,7 +69,7 @@ export class Header extends React.Component {
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                                style={{ textTransform: "none", color: "#5F4BB6" }}
                             >
                                 {" "}
                                 Forum{" "}
@@ -78,7 +78,7 @@ export class Header extends React.Component {
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                                style={{ textTransform: "none", color: "#5F4BB6" }}
                             >
                                 {" "}
                                 Chat{" "}
@@ -87,7 +87,7 @@ export class Header extends React.Component {
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                                style={{ textTransform: "none", color: "#5F4BB6" }}
                             >
                                 {" "}
                                 About{" "}
@@ -96,7 +96,7 @@ export class Header extends React.Component {
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                                style={{ textTransform: "none", color: "#5F4BB6" }}
                             >
                                 {" "}
                                 FAQ{" "}
@@ -105,7 +105,7 @@ export class Header extends React.Component {
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#f5f5f5" }}
+                                style={{ textTransform: "none", color: "#5F4BB6" }}
                             >
                                 {" "}
                                 Contact Us{" "}
@@ -124,7 +124,7 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "#505050" }}
+                                    style={{ textTransform: "none", color: "lavender" }}
                                     onClick={this.onTopic1Click}
                                 >
                                     {" "}
@@ -133,7 +133,7 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "#505050" }}
+                                    style={{ textTransform: "none", color: "lavender" }}
                                     onClick={this.onTopic2Click}
                                 >
                                     {" "}
@@ -142,7 +142,7 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "#505050" }}
+                                    style={{ textTransform: "none", color: "lavender" }}
                                     onClick={this.onTopic3Click}
                                 >
                                     {" "}
@@ -151,7 +151,7 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "#505050" }}
+                                    style={{ textTransform: "none", color: "lavender" }}
                                     onClick={this.onTopic4Click}
                                 >
                                     {" "}
@@ -160,7 +160,7 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "#505050" }}
+                                    style={{ textTransform: "none", color: "lavender" }}
                                     onClick={this.onTopic5Click}
                                 >
                                     {" "}
@@ -169,12 +169,13 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "#505050" }}
+                                    style={{ textTransform: "none", color: "lavender" }}
                                     onClick={this.onTopic6Click}
                                 >
                                     {" "}
                                     Other{" "}
                                 </Button>
+
                             </div>
                         </Grid>
                     </Grid>

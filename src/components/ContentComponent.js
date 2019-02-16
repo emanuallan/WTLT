@@ -14,6 +14,15 @@ var url =
     "apiKey=9e6c4875383b47c19201e7694edc4eb7";
 var req = new Request(url);
 
+// function isConservative(art) {
+//     console.log("LOOK HERE BUDDY!!   " + art)
+//     if (art.source.id == "the-washington-post") {
+//         console.log("true");
+//         return true;
+//     }
+//     return false;
+// }
+
 /* State Configuration */
 export class ContentComponent extends React.Component {
     constructor(props) {
@@ -64,11 +73,28 @@ export class ContentComponent extends React.Component {
         }
     };
 
-    /* Rendering Configuration (doesn't work though there's no error in the Console) */
     render() {
         // console.log(this.state.articles);
         // console.log(req.url + "&q=" + this.props.topic);
         let topic = this.props.topic;
+        // console.log(topic);
+        // console.log(this.state.articles);
+        // let libArticles;
+        // let consArticles;
+        // let allArticles = this.state.articles;
+        // if (!this.state.articles === undefined || !this.state.articles == 0) {
+        //     console.log(this.state.articles[0]);
+        //     console.log("YEET" + this.state.articles)
+
+        //     for (var i = 0; i < allArticles.length; i++) {
+        //         if (isConservative(allArticles[i])) {
+        //             consArticles.unshift(allArticles[i]);
+        //             return;
+        //         }
+        //         libArticles.unshift(allArticles[i]);
+        //     }
+
+        // }
         return (
             <React.Fragment>
                 <TitleComponent topic={topic} />
@@ -76,8 +102,8 @@ export class ContentComponent extends React.Component {
                 <Grid container>
                     <Grid item xs={12} style={{ textAlign: "center" }}>
                         {this.state.totalResults && (
-                            <Typography variant="subtitle1">
-                                # of Hits: {this.state.totalResults}
+                            <Typography variant="subtitle1" style={{ textAlign: "right" }}>
+                                Hits: {this.state.totalResults}
                             </Typography>
                         )}
                         <Button
@@ -86,50 +112,11 @@ export class ContentComponent extends React.Component {
                                 this.setState({ loading: true });
                             }}
                         >
-                            {" "}
-                            Refresh{" "}
+                            {" "}Refresh{" "}
                         </Button>
                     </Grid>
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
-                        {/* <div className="news-container lib-news-container">
-                            {this.state.totalResults && <p>Amount of Results: {this.state.totalResults}</p>}
-                            {this.state.articles && <p>Source: {this.state.articles[0].source.name}</p>}
-                            {this.state.articles && <p>Article Title: {this.state.articles[0].title}</p>}
-                            {this.state.articles && <p>Author: {this.state.articles[0].author}</p>}
-                            {this.state.articles && <p>Description: {this.state.articles[0].description}</p>}
-                            {this.state.articles && <p>published At: {this.state.articles[0].publishedAt}</p>}
-                            {this.state.articles && <p>URL: {this.state.articles[0].url}</p>}
-                        </div> */}
-
-                        {/* {this.state.articles && (
-                            <ArticleComponent
-                                article={this.state.articles[0]}
-                                className="lib-news-container"
-                            />
-                        )}
-
-                        {this.state.articles && (
-                            <ArticleComponent
-                                article={this.state.articles[1]}
-                                className="lib-news-container"
-                            />
-                        )}
-
-                        {this.state.articles && (
-                            <ArticleComponent
-                                article={this.state.articles[2]}
-                                className="lib-news-container"
-                            />
-                        )}
-
-                        {this.state.articles && (
-                            <ArticleComponent
-                                article={this.state.articles[3]}
-                                className="lib-news-container"
-                            />
-                        )} */}
-
                         {this.state.articles &&
                             this.state.articles.map(art => (
                                 <ArticleComponent
@@ -141,30 +128,14 @@ export class ContentComponent extends React.Component {
                     </Grid>
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
-                        {/* {this.state.articles && (
-                            <ArticleComponent
-                                article={this.state.articles[4]}
-                                className="cons-news-container"
-                            />
-                        )}
-                        {this.state.articles && (
-                            <ArticleComponent
-                                article={this.state.articles[5]}
-                                className="cons-news-container"
-                            />
-                        )}
-                        {this.state.articles && (
-                            <ArticleComponent
-                                article={this.state.articles[6]}
-                                className="cons-news-container"
-                            />
-                        )}
-                        {this.state.articles && (
-                            <ArticleComponent
-                                article={this.state.articles[7]}
-                                className="cons-news-container"
-                            />
-                        )} */}
+                        {this.state.articles &&
+                            this.state.articles.map(art => (
+                                <ArticleComponent
+                                    article={art}
+                                    className="cons-news-container"
+                                    key={this.state.articles.indexOf(art)}
+                                />
+                            ))}
                     </Grid>
                 </Grid>
             </React.Fragment>
