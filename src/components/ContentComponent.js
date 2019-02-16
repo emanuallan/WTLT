@@ -26,13 +26,19 @@ var req = new Request(url);
 /* State Configuration */
 export class ContentComponent extends React.Component {
     constructor(props) {
-        console.log("CONTENTCOMPONENT INSTANTIATED");
         super(props);
         this.state = {
             totalResults: null,
             loading: false,
-            articles: undefined
-            // contentTopic: ""
+            articles: undefined,
+            urlTxt: "https://newsapi.org/v2/top-headlines",
+            queries: [
+                { key: "country", value: "us" },
+                { key: "apiKey", value: "9e6c4875383b47c19201e7694edc4eb7" }
+            ]
+            //  +
+            // "country=us&" +
+            // "apiKey=9e6c4875383b47c19201e7694edc4eb7"
         };
     }
 
@@ -44,7 +50,16 @@ export class ContentComponent extends React.Component {
     componentDidMount = () => {
         // console.log("actual fetch url: " + req.url + "&q=" + this.props.topic);
         // console.log(this.props);
-        fetch(req.url + "&q=" + this.state.contentTopic)
+        // let apiUrl = new URL(this.state.url);
+        // apiUrl.searchParams.append("q", this.state.contentTopic);
+        // this.state.queries.push({ key: "q", value: this.state.contentTopic });
+        let apiURL = new URL(this.state.urlTxt);
+        this.state.queries.forEach(query =>
+            apiURL.searchParams.append(query.key, query.value)
+        );
+        apiURL.searchParams.append("q", this.state.contentTopic);
+        console.log("url on mount: " + this.state.url);
+        fetch(apiURL)
             .then(response => response.json())
             .then(data =>
                 this.setState({
@@ -57,11 +72,17 @@ export class ContentComponent extends React.Component {
 
     componentDidUpdate = () => {
         if (this.state.loading) {
-            console.log(
-                "actual fetch url: " + req.url + "&q=" + this.state.contentTopic
+            // let apiUrl = new URL(this.state.url);
+            // apiUrl.searchParams.append("q", this.state.contentTopic);
+
+            // this.state.queries.push({ key: "q", value: this.state.contentTopic });
+            let apiURL = new URL(this.state.urlTxt);
+            this.state.queries.forEach(query =>
+                apiURL.searchParams.append(query.key, query.value)
             );
-            console.log(this.props);
-            fetch(req.url + "&q=" + this.props.topic)
+            apiURL.searchParams.append("q", this.state.contentTopic);
+            console.log("url on update: " + this.state.url);
+            fetch(apiURL)
                 .then(response => response.json())
                 .then(data =>
                     this.setState({
