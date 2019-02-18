@@ -48,11 +48,6 @@ export class ContentComponent extends React.Component {
     };
 
     componentDidMount = () => {
-        // console.log("actual fetch url: " + req.url + "&q=" + this.props.topic);
-        // console.log(this.props);
-        // let apiUrl = new URL(this.state.url);
-        // apiUrl.searchParams.append("q", this.state.contentTopic);
-        // this.state.queries.push({ key: "q", value: this.state.contentTopic });
         let apiURL = new URL(this.state.urlTxt);
         this.state.queries.forEach(query =>
             apiURL.searchParams.append(query.key, query.value)
@@ -72,10 +67,6 @@ export class ContentComponent extends React.Component {
 
     componentDidUpdate = () => {
         if (this.state.loading) {
-            // let apiUrl = new URL(this.state.url);
-            // apiUrl.searchParams.append("q", this.state.contentTopic);
-
-            // this.state.queries.push({ key: "q", value: this.state.contentTopic });
             let apiURL = new URL(this.state.urlTxt);
             this.state.queries.forEach(query =>
                 apiURL.searchParams.append(query.key, query.value)
@@ -123,7 +114,10 @@ export class ContentComponent extends React.Component {
                 <Grid container>
                     <Grid item xs={12} style={{ textAlign: "center" }}>
                         {this.state.totalResults && (
-                            <Typography variant="subtitle1" style={{ textAlign: "right" }}>
+                            <Typography
+                                variant="subtitle1"
+                                style={{ textAlign: "right" }}
+                            >
                                 Hits: {this.state.totalResults}
                             </Typography>
                         )}
@@ -133,7 +127,8 @@ export class ContentComponent extends React.Component {
                                 this.setState({ loading: true });
                             }}
                         >
-                            {" "}Refresh{" "}
+                            {" "}
+                            Refresh{" "}
                         </Button>
                     </Grid>
 
