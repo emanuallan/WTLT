@@ -7,13 +7,6 @@ import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 import Grid from "@material-ui/core/Grid";
 
-/* API URL for request */
-var url =
-    "https://newsapi.org/v2/top-headlines?" +
-    "country=us&" +
-    "apiKey=9e6c4875383b47c19201e7694edc4eb7";
-var req = new Request(url);
-
 // function isConservative(art) {
 //     console.log("LOOK HERE BUDDY!!   " + art)
 //     if (art.source.id == "the-washington-post") {
