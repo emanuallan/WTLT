@@ -6,6 +6,8 @@ import ArticleComponent from "./ArticleComponent";
 import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 import Grid from "@material-ui/core/Grid";
+import ReactGrid from "@material-ui/core/Grid";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 // function isConservative(art) {
 //     console.log("LOOK HERE BUDDY!!   " + art)
@@ -99,6 +101,14 @@ export class ContentComponent extends React.Component {
         //     }
 
         // }
+        const loading = this.state.loading;
+        if (loading) {
+            return (
+                <ReactGrid container justify="center" alignContent="center" alignItems="center" style={{ padding: 200, color: "#5F4BB6" }}>
+                    <CircularProgress />
+                </ReactGrid>
+            );
+        }
         return (
             <React.Fragment>
                 <TitleComponent topic={topic} />
