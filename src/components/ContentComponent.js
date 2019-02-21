@@ -26,7 +26,6 @@ export class ContentComponent extends React.Component {
             articles: undefined,
             urlTxt: "https://newsapi.org/v2/top-headlines",
             queries: [
-                { key: "country", value: "us" },
                 { key: "apiKey", value: "9e6c4875383b47c19201e7694edc4eb7" }
             ]
             //  +
@@ -105,7 +104,7 @@ export class ContentComponent extends React.Component {
                 <TitleComponent topic={topic} />
                 {/* NOTE: CERTAIN INFO WON'T APPEAR IF THE API DOES NOT RETURN A VALUE */}
                 <Grid container>
-                    <Grid item xs={12} style={{ textAlign: "center" }}>
+                    {/* <Grid item xs={12} style={{ textAlign: "center" }}>
                         {this.state.totalResults && (
                             <Typography
                                 variant="subtitle1"
@@ -123,7 +122,7 @@ export class ContentComponent extends React.Component {
                             {" "}
                             Refresh{" "}
                         </Button>
-                    </Grid>
+                    </Grid> */}
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
                         {this.state.articles &&
