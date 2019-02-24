@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 import Banner from "../assets/Banner.jpg";
+import MenuButtonComponent from "./MenuButtonComponent"
 
 export class Header extends React.Component {
     constructor(props) {
@@ -33,7 +34,7 @@ export class Header extends React.Component {
     }
 
     onTopic3Click() {
-        this.props.setTopic("LGBT");
+        this.props.setTopic("LGBTQ");
     }
 
     onTopic4Click() {
@@ -41,7 +42,7 @@ export class Header extends React.Component {
     }
 
     onTopic5Click() {
-        this.props.setTopic("Shooting");
+        this.props.setTopic("Gun Policy");
     }
 
     onTopic6Click() {
@@ -115,7 +116,7 @@ export class Header extends React.Component {
                             <img
                                 src={Banner}
                                 style={{ width: "100%" }}
-                                alt="banner with Donald Trump and Nancy Pelosi"
+                                alt="banner with purple pundit logo"
                             />
                         </Grid>
 
@@ -146,7 +147,7 @@ export class Header extends React.Component {
                                     onClick={this.onTopic3Click}
                                 >
                                     {" "}
-                                    LGBT{" "}
+                                    LGBTQ{" "}
                                 </Button>
                                 <Button
                                     variant="text"
@@ -164,9 +165,9 @@ export class Header extends React.Component {
                                     onClick={this.onTopic5Click}
                                 >
                                     {" "}
-                                    Gun Control{" "}
+                                    Gun Policy{" "}
                                 </Button>
-                                <Button
+                                {/* <Button
                                     variant="text"
                                     className="header-bottom-buttons"
                                     style={{ textTransform: "none", color: "lavender" }}
@@ -174,8 +175,8 @@ export class Header extends React.Component {
                                 >
                                     {" "}
                                     Other{" "}
-                                </Button>
-
+                                </Button> */}
+                                <MenuButtonComponent />
                             </div>
                         </Grid>
                     </Grid>

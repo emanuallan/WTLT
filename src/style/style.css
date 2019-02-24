@@ -9,7 +9,7 @@
     text-align: right;
     flex-direction: row;
     position: absolute;
-    right: 1rem;
+    right: 1em;
 }
 
 /* Controls the subject group of buttons */
@@ -43,7 +43,6 @@
 
 
 .news-container {
-    min-height: 20%;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 1rem;
@@ -84,8 +83,8 @@
 }
 
 .news-container img{
-    min-width:320px;
-    min-height:160px;
+    /* min-width:320px;
+    min-height:160px; */
     max-width:400px;
     max-height:230px;
     text-align:center;
@@ -102,6 +101,13 @@
 
 .right {
     text-align: right;
+    padding: 4px;
+    margin: auto;
+}
+
+.right-corner {
+    text-align: right;
+    margin: auto;
 }
 
 *{

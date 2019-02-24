@@ -6,6 +6,8 @@ import ArticleComponent from "./ArticleComponent";
 import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 import Grid from "@material-ui/core/Grid";
+import ReactGrid from "@material-ui/core/Grid";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 // function isConservative(art) {
 //     console.log("LOOK HERE BUDDY!!   " + art)
@@ -24,9 +26,8 @@ export class ContentComponent extends React.Component {
             totalResults: null,
             loading: false,
             articles: undefined,
-            urlTxt: "https://newsapi.org/v2/top-headlines",
+            urlTxt: "https://newsapi.org/v2/everything",
             queries: [
-                { key: "country", value: "us" },
                 { key: "apiKey", value: "9e6c4875383b47c19201e7694edc4eb7" }
             ]
             //  +
@@ -100,12 +101,20 @@ export class ContentComponent extends React.Component {
         //     }
 
         // }
+        const loading = this.state.loading;
+        if (loading) {
+            return (
+                <ReactGrid container justify="center" alignContent="center" alignItems="center" style={{ padding: 200, color: "#5F4BB6" }}>
+                    <CircularProgress />
+                </ReactGrid>
+            );
+        }
         return (
             <React.Fragment>
                 <TitleComponent topic={topic} />
                 {/* NOTE: CERTAIN INFO WON'T APPEAR IF THE API DOES NOT RETURN A VALUE */}
                 <Grid container>
-                    <Grid item xs={12} style={{ textAlign: "center" }}>
+                    {/* <Grid item xs={12} style={{ textAlign: "center" }}>
                         {this.state.totalResults && (
                             <Typography
                                 variant="subtitle1"
@@ -123,7 +132,7 @@ export class ContentComponent extends React.Component {
                             {" "}
                             Refresh{" "}
                         </Button>
-                    </Grid>
+                    </Grid> */}
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
                         {this.state.articles &&
