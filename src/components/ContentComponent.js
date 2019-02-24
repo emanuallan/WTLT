@@ -26,7 +26,7 @@ export class ContentComponent extends React.Component {
             totalResults: null,
             loading: false,
             articles: undefined,
-            urlTxt: "https://newsapi.org/v2/top-headlines",
+            urlTxt: "https://newsapi.org/v2/everything",
             queries: [
                 { key: "apiKey", value: "9e6c4875383b47c19201e7694edc4eb7" }
             ]

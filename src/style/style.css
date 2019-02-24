@@ -101,6 +101,13 @@
 
 .right {
     text-align: right;
+    padding: 4px;
+    margin: auto;
+}
+
+.right-corner {
+    text-align: right;
+    margin: auto;
 }
 
 *{

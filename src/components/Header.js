@@ -42,7 +42,7 @@ export class Header extends React.Component {
     }
 
     onTopic5Click() {
-        this.props.setTopic("Shooting");
+        this.props.setTopic("Gun Policy");
     }
 
     onTopic6Click() {
@@ -165,7 +165,7 @@ export class Header extends React.Component {
                                     onClick={this.onTopic5Click}
                                 >
                                     {" "}
-                                    Gun Control{" "}
+                                    Gun Policy{" "}
                                 </Button>
                                 {/* <Button
                                     variant="text"
