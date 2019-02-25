@@ -1,2 +1,2 @@
-# WTLT
-whatsthelatest.today
+# PURPLE
+purplepundit.co
