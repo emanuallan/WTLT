@@ -1,9 +1,14 @@
 import React from "react";
+import Header from "../components/Header";
+import { AboutLandingComponent } from "../components/AboutLandingComponent";
 
-const AboutPage = () => (
-    <React.Fragment>
-        <h1>Hello!</h1>
-    </React.Fragment>
-);
-
-export default AboutPage;
+export default class AboutPage extends React.Component {
+    render() {
+        return (
+            <React.Fragment>
+                <Header />
+                <AboutLandingComponent />
+            </React.Fragment>
+        );
+    }
+}
