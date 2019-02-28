@@ -1,6 +1,5 @@
 import React from "react";
-import render from "react-dom";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import PublicRoute from "./PublicRoute";
 import HomePage from "../pages/HomePage";
 import AboutPage from "../pages/AboutPage";
