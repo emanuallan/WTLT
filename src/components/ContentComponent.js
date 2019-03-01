@@ -40,8 +40,9 @@ export class ContentComponent extends React.Component {
         // this.state.queries.forEach(query =>
         //     apiURLCons.searchParams.append(query.key, query.value)
         // );
-        // apiURL.searchParams.append("q", this.state.contentTopic);
-        // console.log("url on mount: " + this.state.url);
+        apiURLCons.searchParams.append("topic", this.state.contentTopic);
+        apiURLLib.searchParams.append("topic", this.state.contentTopic);
+        console.log("url on mount: " + this.state.url);
         fetch(apiURLCons)
             .then(response => response.json())
             .then(data =>
@@ -70,6 +71,9 @@ export class ContentComponent extends React.Component {
             // );
             // apiURLCons.searchParams.append("q", this.state.contentTopic);
             // console.log("url on update: " + this.state.url);
+            // if (this.state)
+            apiURLCons.searchParams.append("topic", this.state.contentTopic);
+            apiURLLib.searchParams.append("topic", this.state.contentTopic);
             fetch(apiURLCons)
                 .then(response => response.json())
                 .then(data =>
