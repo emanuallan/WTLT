@@ -4,6 +4,8 @@ import TableCell from "@material-ui/core/TableCell";
 import Button from "@material-ui/core/Button";
 import history from "../routers/purplehistory";
 import Banner from "../assets/Banner.jpg";
+import allan from "../assets/allan.jpg";
+import jahz from "../assets/jahz.jpg";
 
 export class AboutLandingComponent extends React.Component {
     render() {
@@ -44,7 +46,7 @@ export class AboutLandingComponent extends React.Component {
 
                     <Grid xs={6} className="landing-grid">
                         <img
-                            src="http://icons-for-free.com/free-icons/png/512/984108.png"
+                            src={allan}
                             alt="avatar"
                             className="avatar-img"
                         />
@@ -102,7 +104,7 @@ export class AboutLandingComponent extends React.Component {
 
                     <Grid xs={6} className="landing-grid">
                         <img
-                            src="https://icons-for-free.com/free-icons/png/512/984120.png"
+                            src={jahz}
                             alt="avatar"
                             className="avatar-img"
                         />
