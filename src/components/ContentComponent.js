@@ -9,15 +9,6 @@ import Grid from "@material-ui/core/Grid";
 import ReactGrid from "@material-ui/core/Grid";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-// function isConservative(art) {
-//     console.log("LOOK HERE BUDDY!!   " + art)
-//     if (art.source.id == "the-washington-post") {
-//         console.log("true");
-//         return true;
-//     }
-//     return false;
-// }
-
 /* State Configuration */
 export class ContentComponent extends React.Component {
     constructor(props) {
@@ -25,11 +16,15 @@ export class ContentComponent extends React.Component {
         this.state = {
             totalResults: null,
             loading: false,
-            articles: undefined,
-            urlTxt: "https://newsapi.org/v2/top-headlines",
-            queries: [
-                { key: "apiKey", value: "9e6c4875383b47c19201e7694edc4eb7" }
-            ]
+
+            consArticles: undefined,
+            libArticles: undefined,
+            urlTxtCons: "http://purpleapi.appspot.com/news/conservative",
+            urlTxtLib: "http://purpleapi.appspot.com/news/liberal",
+            // queries: [
+            //     { key: "apiKey", value: "9e6c4875383b47c19201e7694edc4eb7" }
+            // ]
+
             //  +
             // "country=us&" +
             // "apiKey=9e6c4875383b47c19201e7694edc4eb7"
@@ -42,18 +37,28 @@ export class ContentComponent extends React.Component {
     };
 
     componentDidMount = () => {
-        let apiURL = new URL(this.state.urlTxt);
-        this.state.queries.forEach(query =>
-            apiURL.searchParams.append(query.key, query.value)
-        );
-        apiURL.searchParams.append("q", this.state.contentTopic);
+        let apiURLCons = new URL(this.state.urlTxtCons);
+        let apiURLLib = new URL(this.state.urlTxtLib);
+        // this.state.queries.forEach(query =>
+        //     apiURLCons.searchParams.append(query.key, query.value)
+        // );
+        apiURLCons.searchParams.append("topic", this.state.contentTopic);
+        apiURLLib.searchParams.append("topic", this.state.contentTopic);
         console.log("url on mount: " + this.state.url);
-        fetch(apiURL)
+        fetch(apiURLCons)
             .then(response => response.json())
             .then(data =>
                 this.setState({
-                    totalResults: data.totalResults,
-                    articles: data.articles,
+                    // totalResults: totalResults + data.totalResults,
+                    consArticles: data.articles,
+                    loading: false
+                })
+            );
+        fetch(apiURLLib)
+            .then(response => response.json())
+            .then(data =>
+                this.setState({
+                    libArticles: data.articles,
                     loading: false
                 })
             );
@@ -61,19 +66,38 @@ export class ContentComponent extends React.Component {
 
     componentDidUpdate = () => {
         if (this.state.loading) {
-            let apiURL = new URL(this.state.urlTxt);
-            this.state.queries.forEach(query =>
-                apiURL.searchParams.append(query.key, query.value)
-            );
-            apiURL.searchParams.append("q", this.state.contentTopic);
-            console.log("url on update: " + this.state.url);
-            fetch(apiURL)
+            let apiURLCons = new URL(this.state.urlTxtCons);
+            let apiURLLib = new URL(this.state.urlTxtLib);
+            // this.state.queries.forEach(query =>
+            //     apiURLCons.searchParams.append(query.key, query.value)
+            // );
+            // apiURLCons.searchParams.append("q", this.state.contentTopic);
+            // console.log("url on update: " + this.state.url);
+            // if (this.state)
+            apiURLCons.searchParams.append("topic", this.state.contentTopic);
+            apiURLLib.searchParams.append("topic", this.state.contentTopic);
+            fetch(apiURLCons)
                 .then(response => response.json())
                 .then(data =>
                     this.setState({
                         totalResults: data.totalResults,
                         loading: false,
-                        articles: data.articles
+                        consArticles: data.articles
+                    })
+                );
+
+            // this.state.queries.forEach(query =>
+            //     apiURLLib.searchParams.append(query.key, query.value)
+            // );
+            // apiURLLib.searchParams.append("q", this.state.contentTopic);
+            // console.log("url on update: " + this.state.url);
+            fetch(apiURLLib)
+                .then(response => response.json())
+                .then(data =>
+                    this.setState({
+                        totalResults: data.totalResults,
+                        loading: false,
+                        libArticles: data.articles
                     })
                 );
         }
@@ -83,22 +107,6 @@ export class ContentComponent extends React.Component {
         // console.log(this.state.articles);
         // console.log(req.url + "&q=" + this.props.topic);
         let topic = this.props.topic;
-        // console.log(topic);
-        // console.log(this.state.articles);
-        // let libArticles;
-        // let consArticles;
-        // let allArticles = this.state.articles;
-        // if (!this.state.articles === undefined || !this.state.articles == 0) {
-        //     console.log(this.state.articles[0]);
-        //     console.log("YEET" + this.state.articles)
-
-        //     for (var i = 0; i < allArticles.length; i++) {
-        //         if (isConservative(allArticles[i])) {
-        //             consArticles.unshift(allArticles[i]);
-        //             return;
-        //         }
-        //         libArticles.unshift(allArticles[i]);
-        //     }
 
         // }
         const loading = this.state.loading;
@@ -135,23 +143,23 @@ export class ContentComponent extends React.Component {
                     </Grid> */}
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
-                        {this.state.articles &&
-                            this.state.articles.map(art => (
+                        {this.state.libArticles &&
+                            this.state.libArticles.map(art => (
                                 <ArticleComponent
                                     article={art}
                                     className="lib-news-container"
-                                    key={this.state.articles.indexOf(art)}
+                                    key={this.state.libArticles.indexOf(art)}
                                 />
                             ))}
                     </Grid>
 
                     <Grid item xs={6} style={{ marginTop: 5 }}>
-                        {this.state.articles &&
-                            this.state.articles.map(art => (
+                        {this.state.consArticles &&
+                            this.state.consArticles.map(art => (
                                 <ArticleComponent
                                     article={art}
                                     className="cons-news-container"
-                                    key={this.state.articles.indexOf(art)}
+                                    key={this.state.consArticles.indexOf(art)}
                                 />
                             ))}
                     </Grid>
