@@ -50,7 +50,7 @@ export class Header extends React.Component {
         this.props.setTopic("Trump");
     }
 
-    componentDidMount() {}
+    componentDidMount() { }
 
     render() {
         return (
@@ -63,6 +63,7 @@ export class Header extends React.Component {
                                 size="small"
                                 className="header-top-buttons"
                                 style={{ textTransform: "none", color: "#5F4BB6" }}
+                                onClick={() => history.push("/")}
                             >
                                 {" "}
                                 Home{" "}

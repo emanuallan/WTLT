@@ -1,15 +1,50 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import TableCell from "@material-ui/core/TableCell";
+import Button from "@material-ui/core/Button";
+import history from "../routers/purplehistory";
+import Banner from "../assets/Banner.jpg";
 
 export class AboutLandingComponent extends React.Component {
     render() {
         return (
-            <div style={{ width: "100%", margin: "auto", color: "lavender" }}>
+            <div id="mainBlock" style={{ width: "100%", margin: "auto", color: "lavender" }}>
                 <Grid container>
+                    <div className="header-top-menuContainer">
+                        <Button
+                            variant="text"
+                            size="small"
+                            className="header-top-buttons"
+                            style={{ textTransform: "none", color: "#5F4BB6" }}
+                            onClick={() => history.push("/")}
+                        >
+                            {" "}
+                            Home{" "}
+                        </Button>
+
+                        <Button
+                            variant="text"
+                            size="small"
+                            className="header-top-buttons"
+                            style={{ textTransform: "none", color: "#5F4BB6" }}
+                            onClick={() => history.push("/about")}
+                        >
+                            {" "}
+                            About{" "}
+                        </Button>
+                    </div>
+                    <Grid item xs={12}>
+                        <img
+                            id="header-img"
+                            src={Banner}
+                            style={{ width: "100%" }}
+                            alt="banner with purple pundit logo"
+                        />
+                    </Grid>
+
                     <Grid xs={6} className="landing-grid">
                         <img
-                            src="https://icons-for-free.com/free-icons/png/512/984120.png"
+                            src="http://icons-for-free.com/free-icons/png/512/984108.png"
                             alt="avatar"
                             className="avatar-img"
                         />
@@ -67,7 +102,7 @@ export class AboutLandingComponent extends React.Component {
 
                     <Grid xs={6} className="landing-grid">
                         <img
-                            src="http://icons-for-free.com/free-icons/png/512/984108.png"
+                            src="https://icons-for-free.com/free-icons/png/512/984120.png"
                             alt="avatar"
                             className="avatar-img"
                         />
