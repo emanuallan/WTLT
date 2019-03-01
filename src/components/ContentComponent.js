@@ -16,6 +16,7 @@ export class ContentComponent extends React.Component {
         this.state = {
             totalResults: null,
             loading: false,
+
             consArticles: undefined,
             libArticles: undefined,
             urlTxtCons: "http://purpleapi.appspot.com/news/conservative",
@@ -23,6 +24,7 @@ export class ContentComponent extends React.Component {
             // queries: [
             //     { key: "apiKey", value: "9e6c4875383b47c19201e7694edc4eb7" }
             // ]
+
             //  +
             // "country=us&" +
             // "apiKey=9e6c4875383b47c19201e7694edc4eb7"
@@ -119,7 +121,7 @@ export class ContentComponent extends React.Component {
             <React.Fragment>
                 <TitleComponent topic={topic} />
                 {/* NOTE: CERTAIN INFO WON'T APPEAR IF THE API DOES NOT RETURN A VALUE */}
-                <Grid container>
+                <Grid container style={{ background: "lavender" }}>
                     {/* <Grid item xs={12} style={{ textAlign: "center" }}>
                         {this.state.totalResults && (
                             <Typography
