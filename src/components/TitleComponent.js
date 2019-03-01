@@ -13,14 +13,14 @@ export default class TitleComponent extends React.Component {
         return (
             <React.Fragment>
                 <div className="title-wrapper">
-                    <div className="small-title-text">
+                    {/* <div className="small-title-text">
                         <Typography variant="subtitle2">
                             {" "}
                             What is the latest in{" "}
                         </Typography>
-                    </div>
+                    </div> */}
 
-                    <div className="title-text">
+                    <div className="title-text" style={{ paddingTop: "0.5%" }}>
                         <Typography variant="h2"> {this.props.topic} </Typography>
                     </div>
                 </div>

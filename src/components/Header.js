@@ -4,7 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 import Banner from "../assets/Banner.jpg";
-import MenuButtonComponent from "./MenuButtonComponent"
+import MenuButtonComponent from "./MenuButtonComponent";
+import history from "../routers/purplehistory";
 
 export class Header extends React.Component {
     constructor(props) {
@@ -62,11 +63,12 @@ export class Header extends React.Component {
                                 size="small"
                                 className="header-top-buttons"
                                 style={{ textTransform: "none", color: "#5F4BB6" }}
+                                onClick={() => history.push("/")}
                             >
                                 {" "}
                                 Home{" "}
                             </Button>
-                            <Button
+                            {/* <Button
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
@@ -83,17 +85,18 @@ export class Header extends React.Component {
                             >
                                 {" "}
                                 Chat{" "}
-                            </Button>
+                            </Button> */}
                             <Button
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
                                 style={{ textTransform: "none", color: "#5F4BB6" }}
+                                onClick={() => history.push("/about")}
                             >
                                 {" "}
                                 About{" "}
                             </Button>
-                            <Button
+                            {/* <Button
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
@@ -110,7 +113,7 @@ export class Header extends React.Component {
                             >
                                 {" "}
                                 Contact Us{" "}
-                            </Button>
+                            </Button> */}
                         </div>
                         <Grid item xs={12}>
                             <img

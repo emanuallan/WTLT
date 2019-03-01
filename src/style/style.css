@@ -19,8 +19,6 @@
 }
 
 
-.header-top-buttons {
-}
 .header-bottom-buttons {
     flex: 1;
 }
@@ -39,6 +37,7 @@
 
 .title-text {
     padding-bottom: 0.5%;
+    padding-top: 0.5%;
 
 }
 
