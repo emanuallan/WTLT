@@ -10,7 +10,7 @@ export class AboutLandingComponent extends React.Component {
         return (
             <div id="mainBlock" style={{ width: "100%", margin: "auto", color: "lavender" }}>
                 <Grid container>
-                    <div className="header-top-menuContainer">
+                    {/* <div className="header-top-menuContainer">
                         <Button
                             variant="text"
                             size="small"
@@ -40,7 +40,7 @@ export class AboutLandingComponent extends React.Component {
                             style={{ width: "100%" }}
                             alt="banner with purple pundit logo"
                         />
-                    </Grid>
+                    </Grid> */}
 
                     <Grid xs={6} className="landing-grid">
                         <img

@@ -7,6 +7,7 @@ export default class AboutPage extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <Header />
                 <AboutLandingComponent />
                 <Footer />
             </React.Fragment>
