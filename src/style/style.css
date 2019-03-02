@@ -60,10 +60,16 @@
     background: #ba1f1f;
 }
 
+.raisedbox { 
+    background: rgba(27, 27, 27, 0.5); 
+    border-radius: 5px; 
+    border:1px solid white;
+}
+
 .news-container h2{
     text-align:center;
-    border-top: 3px double whitesmoke;
-    border-bottom: 3px double whitesmoke;
+    /* border-top: 3px double whitesmoke;
+    border-bottom: 3px double whitesmoke; */
     padding: 5px;
 }
 
@@ -82,9 +88,9 @@
 }
 
 .news-container img{
-    max-width:400px;
-    max-height:230px;
-    text-align:center;
+    width:160%;
+    height:220px;
+    text-align:left;
     border: 1px solid black;
     margin-top: 3%
 }
