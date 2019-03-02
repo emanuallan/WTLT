@@ -20,7 +20,7 @@ export default class TitleComponent extends React.Component {
                         </Typography>
                     </div> */}
 
-                    <div className="title-text" style={{ paddingTop: "0.5%" }}>
+                    <div className="title-text">
                         <Typography variant="h2"> {this.props.topic} </Typography>
                     </div>
                 </div>
