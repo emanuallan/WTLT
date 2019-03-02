@@ -81,9 +81,9 @@ export class MenuButtonComponent extends React.Component {
         this.setState({ anchorEl: null });
         this.props.setTopic("Venezuela");
     };
-    handleCloseJR = () => {
+    handleCloseMC = () => {
         this.setState({ anchorEl: null });
-        this.props.setTopic("Jorge Ramos");
+        this.props.setTopic("Michael Cohen");
     };
 
     render() {
@@ -113,8 +113,8 @@ export class MenuButtonComponent extends React.Component {
                     <MenuItem onClick={this.handleCloseGI}>Gender Identity</MenuItem>
                     <MenuItem onClick={this.handleCloseHC}>Healthcare</MenuItem>
                     <MenuItem onClick={this.handleCloseIS}>Israel</MenuItem>
-                    <MenuItem onClick={this.handleCloseJR}>Jorge Ramos</MenuItem>
                     <MenuItem onClick={this.handleClosePP}>Planned Parenthood</MenuItem>
+                    <MenuItem onClick={this.handleCloseMC}>Michael Cohen</MenuItem>
                     <MenuItem onClick={this.handleCloseMW}>Minimum Wage</MenuItem>
                     <MenuItem onClick={this.handleCloseNN}>Net Neutrality</MenuItem>
                     <MenuItem onClick={this.handleCloseNK}>North Korea</MenuItem>
