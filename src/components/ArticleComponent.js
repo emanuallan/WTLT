@@ -23,13 +23,13 @@ export default function ArticleComponent(props) {
 
                     <Grid item xs={4}>
                         <img src={image} alt="newsImage" className="center"></img>
-                        <p style={{ fontSize: "35px", textAlign: "left", margin: "0px", bottom: "0" }}><b>{props.article.source.name}</b></p>
+                        <p style={{ fontSize: "35px", textAlign: "left", margin: "0px", marginTop: "5%" }}><b>{props.article.source.name}</b></p>
                     </Grid>
 
                     <Grid item xs={8}>
-                        <h2 className="raisedbox">{props.article.title}</h2>
-                        <p className="raisedbox"> {props.article.description}</p>
-                        <p className="right">Written by {author}</p>
+                        <h2 className="raisedbox" style={{ marginLeft: "17%" }}>{props.article.title}</h2>
+                        <p className="raisedbox" style={{ marginLeft: "34%", padding: "5px" }}> {props.article.description}</p>
+                        <p className="right" style={{ borderTop: "1px solid white", marginLeft: "10%" }}>Written by {author}</p>
                         <p className="right">{Moment(date).format('LLL')}</p>
                     </Grid>
 

@@ -71,6 +71,7 @@
     /* border-top: 3px double whitesmoke;
     border-bottom: 3px double whitesmoke; */
     padding: 5px;
+    margin-bottom: 1%;
 }
 
 .news-container a{
@@ -89,7 +90,7 @@
 
 .news-container img{
     width:160%;
-    height:220px;
+    height:200px;
     text-align:left;
     border: 1px solid black;
     margin-top: 3%
