@@ -6,12 +6,44 @@ import history from "../routers/purplehistory";
 import Banner from "../assets/Banner.jpg";
 import allan from "../assets/allan.jpg";
 import jahz from "../assets/jahz.jpg";
+import logo from "../assets/logo.jpg";
 
 export class AboutLandingComponent extends React.Component {
     render() {
         return (
-            <div id="mainBlock" style={{ width: "100%", margin: "auto", color: "lavender" }}>
+            <div id="mainBlock" style={{ width: "100%", margin: "auto", background: "lavender" }}>
                 <Grid container>
+                    <Grid xs={4} className="landing-grid">
+
+                        <h1 style={{ color: "#5F4BB6", fontSize: "320%", marginTop: "6%", marginBottom: "0px" }}> Creators of</h1>
+                        <img
+                            src={logo}
+                            style={{ width: "41%", borderRadius: "20px", marginTop: "4.5%" }}
+                            alt="banner with purple pundit logo"
+                        />
+
+                        <div className="banner-text" style={{ padding: "0px" }}>
+
+                            <p style={{ fontSize: "80%", textAlign: "left" }}>
+                                {" "}
+                                Detecting and understanding bias is an important aspect of politics.
+                                Therefore, the Purple Pundit project was created to better simplify and display the political differences
+                                that exist within each of the major media news outlets available. Thanks to the <a href="https://newsapi.org">NewsApi.org</a>, Purple Pundit currently features over 50 media sources including
+                                CNN, MSNBC, Fox News, The Washington Times, amongst others. The color that determines the political bias of each of the sources is determined by the
+                                <a href="https://mediabiasfactcheck.com/"> Media Bias Fact Checker</a>.
+                            </p>
+                            <p style={{ fontSize: "80%", textAlign: "left", paddingTop: "5%" }}>
+                                In an age in which effective political discussion is held to a minimum
+                                and corrupted with identity politics, it is important to understand both sides of the argument. Purple Pundit was created not with
+                                the intent to encourage either political side, rather it was created to promote discussion, comprehension, and the well-informed individual.
+                                {" "}
+                            </p>
+
+                        </div>
+
+
+                    </Grid>
+
                     {/* <div className="header-top-menuContainer">
                         <Button
                             variant="text"
@@ -44,7 +76,7 @@ export class AboutLandingComponent extends React.Component {
                         />
                     </Grid> */}
 
-                    <Grid xs={6} className="landing-grid">
+                    <Grid xs={4} className="landing-grid">
                         <img
                             src={allan}
                             alt="avatar"
@@ -58,8 +90,10 @@ export class AboutLandingComponent extends React.Component {
 
                             <p>
                                 {" "}
-                                4th Year Computer Science Student at the Georgia
-                                Institute of Technology.{" "}
+                                4th Year Computer Science Student at the <span style={{ color: "#B3A369" }}><b>Georgia
+                                Institute of Technology</b></span> with a minor in Society, Sports, and Technology from the GT
+                                School of History and Sociology.
+                                {" "}
                             </p>
 
                             <div className="social-links">
@@ -102,7 +136,7 @@ export class AboutLandingComponent extends React.Component {
                         </div>
                     </Grid>
 
-                    <Grid xs={6} className="landing-grid">
+                    <Grid xs={4} className="landing-grid">
                         <img
                             src={jahz}
                             alt="avatar"
@@ -116,8 +150,8 @@ export class AboutLandingComponent extends React.Component {
 
                             <p>
                                 {" "}
-                                4th Year Computer Science Student at the Georgia
-                                Institute of Technology.{" "}
+                                4th Year Computer Science Student at the <span style={{ color: "#B3A369" }}><b>Georgia
+                                Institute of Technology</b></span>.{" "}
                             </p>
 
                             <div className="social-links">

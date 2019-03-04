@@ -21,7 +21,7 @@ export default class TitleComponent extends React.Component {
                     </div> */}
 
                     <div className="title-text">
-                        <Typography variant="h2"> {this.props.topic} </Typography>
+                        <Typography variant="h2" style={{fontSize:"500%"}}> {this.props.topic} </Typography>
                     </div>
                 </div>
             </React.Fragment>

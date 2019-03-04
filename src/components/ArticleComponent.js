@@ -1,6 +1,7 @@
 import React from "react";
 import Moment from "moment";
 import logo from "../assets/logo.jpg";
+import Grid from "@material-ui/core/Grid";
 
 export default function ArticleComponent(props) {
     Moment.locale('en');
@@ -18,17 +19,25 @@ export default function ArticleComponent(props) {
     return (
         <a href={props.article.url}>
             <div className={"news-container " + props.className}>
-                <p className="right-corner" style={{ fontSize: "22px" }}><b>{props.article.source.name}</b></p>
-                <img src={image} alt="newsImage" className="center"></img>
-                <h2>{props.article.title}</h2>
-                {/* <h2>{props.article.source.name}</h2> */}
-                {/* <p>Author: {props.article.author}</p> */}
-                <p>{props.article.description}</p>
-                <p className="right">Written by {author}</p>
-                <p className="right">{Moment(date).format('LLL')}</p>
+                <Grid container>
 
-                {/* <p><a href={props.article.url}>{props.article.url}</a></p> */}
+                    <Grid item xs={4}>
+                        <img src={image} alt="newsImage" className="center"></img>
+                        <p style={{ fontSize: "280%", textAlign: "left", margin: "0px", marginTop: "5%" }}><b>{props.article.source.name}</b></p>
+                    </Grid>
+
+                    <Grid item xs={8}>
+                        <h2 className="raisedbox" style={{ marginLeft: "17%", fontSize: "150%" }}>{props.article.title}</h2>
+                        <p className="raisedbox" style={{ marginLeft: "34%", padding: "5px", fontSize: "95%" }}> {props.article.description}</p>
+                        <p className="right" style={{ borderTop: "1px solid white", marginLeft: "10%" }}>Written by {author}</p>
+                        <p className="right">{Moment(date).format('LLL')}</p>
+                    </Grid>
+
+
+                    {/* <p><a href={props.article.url}>{props.article.url}</a></p> */}
+
+                </Grid>
             </div>
-        </a>
+        </a >
     );
 }

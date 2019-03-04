@@ -44,7 +44,7 @@ export class ContentComponent extends React.Component {
         // );
         apiURLCons.searchParams.append("topic", this.state.contentTopic);
         apiURLLib.searchParams.append("topic", this.state.contentTopic);
-        console.log("url on mount: " + this.state.url);
+        //console.log("url on mount: " + this.state.url);
         fetch(apiURLCons)
             .then(response => response.json())
             .then(data =>
