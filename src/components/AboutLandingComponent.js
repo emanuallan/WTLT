@@ -15,7 +15,7 @@ export class AboutLandingComponent extends React.Component {
                 <Grid container>
                     <Grid xs={4} className="landing-grid">
 
-                        <h1 style={{ color: "#5F4BB6", fontSize: "320%", marginBottom: "0px" }}> Creators of</h1>
+                        <h1 style={{ color: "#5F4BB6", fontSize: "320%", marginTop: "6%", marginBottom: "0px" }}> Creators of</h1>
                         <img
                             src={logo}
                             style={{ width: "41%", borderRadius: "20px", marginTop: "4.5%" }}
@@ -28,7 +28,7 @@ export class AboutLandingComponent extends React.Component {
                                 {" "}
                                 Detecting and understanding bias is an important aspect of politics.
                                 Therefore, the Purple Pundit project was created to better simplify and display the political differences
-                                that exist within each of the major media news outlets available. Thanks to the <a href="https://newsapi.org">NewsApi.org </a>, Purple Pundit currently features over 50 media sources including
+                                that exist within each of the major media news outlets available. Thanks to the <a href="https://newsapi.org">NewsApi.org</a>, Purple Pundit currently features over 50 media sources including
                                 CNN, MSNBC, Fox News, The Washington Times, amongst others. The color that determines the political bias of each of the sources is determined by the
                                 <a href="https://mediabiasfactcheck.com/"> Media Bias Fact Checker</a>.
                             </p>
