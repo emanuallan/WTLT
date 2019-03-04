@@ -26,7 +26,7 @@ export class ContentComponent extends React.Component {
             // ]
 
             //  +
-            // "country=us&" +
+            /// "country=us&" +
             // "apiKey=9e6c4875383b47c19201e7694edc4eb7"
         };
     }
