@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 import Grid from "@material-ui/core/Grid";
 import ReactGrid from "@material-ui/core/Grid";
-import CircularProgress from '@material-ui/core/CircularProgress';
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 /* State Configuration */
 export class ContentComponent extends React.Component {
@@ -19,8 +19,8 @@ export class ContentComponent extends React.Component {
 
             consArticles: undefined,
             libArticles: undefined,
-            urlTxtCons: "http://purpleapi.appspot.com/news/conservative",
-            urlTxtLib: "http://purpleapi.appspot.com/news/liberal",
+            urlTxtCons: "https://purpleapi.appspot.com/news/conservative",
+            urlTxtLib: "https://purpleapi.appspot.com/news/liberal"
             // queries: [
             //     { key: "apiKey", value: "9e6c4875383b47c19201e7694edc4eb7" }
             // ]
@@ -112,7 +112,13 @@ export class ContentComponent extends React.Component {
         const loading = this.state.loading;
         if (loading) {
             return (
-                <ReactGrid container justify="center" alignContent="center" alignItems="center" style={{ padding: 200, color: "#5F4BB6" }}>
+                <ReactGrid
+                    container
+                    justify="center"
+                    alignContent="center"
+                    alignItems="center"
+                    style={{ padding: 200, color: "#5F4BB6" }}
+                >
                     <CircularProgress />
                 </ReactGrid>
             );
