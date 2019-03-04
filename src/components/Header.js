@@ -62,7 +62,7 @@ export class Header extends React.Component {
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#5F4BB6" }}
+                                style={{ textTransform: "none", color: "#5F4BB6", fontSize: "110%" }}
                                 onClick={() => history.push("/")}
                             >
                                 {" "}
@@ -90,7 +90,7 @@ export class Header extends React.Component {
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#5F4BB6" }}
+                                style={{ textTransform: "none", color: "#5F4BB6", fontSize: "110%" }}
                                 onClick={() => history.push("/about")}
                             >
                                 {" "}
@@ -128,7 +128,7 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "white" }}
+                                    style={{ textTransform: "none", color: "white", fontSize: "110%" }}
                                     onClick={this.onTopic1Click}
                                 >
                                     {" "}
@@ -137,7 +137,7 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "white" }}
+                                    style={{ textTransform: "none", color: "white", fontSize: "110%"  }}
                                     onClick={this.onTopic2Click}
                                 >
                                     {" "}
@@ -146,7 +146,7 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "white" }}
+                                    style={{ textTransform: "none", color: "white", fontSize: "110%"  }}
                                     onClick={this.onTopic3Click}
                                 >
                                     {" "}
@@ -155,7 +155,7 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "white" }}
+                                    style={{ textTransform: "none", color: "white", fontSize: "110%"  }}
                                     onClick={this.onTopic4Click}
                                 >
                                     {" "}
@@ -164,7 +164,7 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "white" }}
+                                    style={{ textTransform: "none", color: "white", fontSize: "110%"  }}
                                     onClick={this.onTopic5Click}
                                 >
                                     {" "}
