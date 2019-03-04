@@ -90,7 +90,7 @@
 
 .news-container img{
     width:160%;
-    height:200px;
+    height:auto;
     text-align:left;
     border: 1px solid black;
     margin-top: 3%
