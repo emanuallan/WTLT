@@ -57,13 +57,9 @@
     padding: 8px;
 }
 
-#mainBlock:after {
-    content: "";
-    background: lavender;
-    display: block;
-    height: 50px;
-    width: 100%;
-  }
+#mainBlock {
+    padding-bottom: 2%;
+}
 
   #header-img {
     border-bottom: 1px solid #5F4BB6;
