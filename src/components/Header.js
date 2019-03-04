@@ -26,7 +26,7 @@ export class Header extends React.Component {
 
     onTopic1Click() {
         // alert("history");
-        this.props.setTopic("Latest");
+        this.props.setTopic("");
     }
 
     onTopic2Click() {

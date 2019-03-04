@@ -85,6 +85,14 @@ export class MenuButtonComponent extends React.Component {
         this.setState({ anchorEl: null });
         this.props.setTopic("Michael Cohen");
     };
+    handleCloseBS = () => {
+        this.setState({ anchorEl: null });
+        this.props.setTopic("Bernie Sanders");
+    };
+    handleCloseDT = () => {
+        this.setState({ anchorEl: null });
+        this.props.setTopic("Donald Trump");
+    };
 
     render() {
         const { anchorEl } = this.state;
@@ -107,9 +115,11 @@ export class MenuButtonComponent extends React.Component {
                     open={Boolean(anchorEl)}
                     onClose={this.handleClose}
                 >
+                    <MenuItem onClick={this.handleCloseBS}>Bernie Sanders</MenuItem>
                     <MenuItem onClick={this.handleCloseCC}>Climate Change</MenuItem>
                     <MenuItem onClick={this.handleCloseCF}>Confederate Flag</MenuItem>
                     <MenuItem onClick={this.handleCloseDP}>Death Penalty</MenuItem>
+                    <MenuItem onClick={this.handleCloseDT}>Donald Trump</MenuItem>
                     <MenuItem onClick={this.handleCloseGI}>Gender Identity</MenuItem>
                     <MenuItem onClick={this.handleCloseHC}>Healthcare</MenuItem>
                     <MenuItem onClick={this.handleCloseIS}>Israel</MenuItem>
