@@ -9,7 +9,7 @@ import history from "../routers/purplehistory";
 
 export class Header extends React.Component {
     constructor(props) {
-        console.log("HEADER INSTANTIATED");
+        //console.log("HEADER INSTANTIATED");
         super(props);
         // console.log(this.props);
         this.state = {
