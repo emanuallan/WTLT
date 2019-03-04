@@ -24,7 +24,7 @@ export class AboutLandingComponent extends React.Component {
 
                         <div className="banner-text" style={{ padding: "0px" }}>
 
-                            <p style={{ fontSize: "80%", textAlign: "left" }}>
+                            <p style={{ fontSize: "95%", textAlign: "left" }}>
                                 {" "}
                                 Detecting and understanding bias is an important aspect of politics.
                                 Therefore, the Purple Pundit project was created to better simplify and display the political differences
@@ -32,7 +32,7 @@ export class AboutLandingComponent extends React.Component {
                                 CNN, MSNBC, Fox News, The Washington Times, amongst others. The color that determines the political bias of each of the sources is determined by the
                                 <a href="https://mediabiasfactcheck.com/"> Media Bias Fact Checker</a>.
                             </p>
-                            <p style={{ fontSize: "80%", textAlign: "left", paddingTop: "5%" }}>
+                            <p style={{ fontSize: "95%", textAlign: "left", paddingTop: "5%" }}>
                                 In an age in which effective political discussion is held to a minimum
                                 and corrupted with identity politics, it is important to understand both sides of the argument. Purple Pundit was created not with
                                 the intent to encourage either political side, rather it was created to promote discussion, comprehension, and the well-informed individual.
