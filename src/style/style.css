@@ -15,6 +15,7 @@
 /* Controls the subject group of buttons */
 .header-bottom-menuContainer {
     display: flex;
+    margin-top:-0.3%;
     background: #5F4BB6;
 }
 
@@ -26,7 +27,6 @@
 .title-wrapper {
     text-align: center;
     background: lavender;
-
 }
 
 .small-title-text {
