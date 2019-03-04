@@ -1,4 +1,4 @@
-# PURPLE
+# PURPLE PUNDIT
 purplepundit.co
 
 Detecting and understanding bias is an important aspect of politics.
