@@ -102,7 +102,7 @@ export class MenuButtonComponent extends React.Component {
                 <Button
                     variant="text"
                     className="header-bottom-buttons"
-                    style={{ textTransform: "none", color: "lavender" }}
+                    style={{ textTransform: "none", color: "white", fontSize: "110%" }}
                     aria-owns={anchorEl ? 'simple-menu' : undefined}
                     aria-haspopup="true"
                     onClick={this.handleClick}
