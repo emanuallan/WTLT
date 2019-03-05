@@ -15,7 +15,7 @@
 /* Controls the subject group of buttons */
 .header-bottom-menuContainer {
     display: flex;
-    margin-top:-0.5%;
+    margin-top:-4px;
     background: #5F4BB6;
 }
 

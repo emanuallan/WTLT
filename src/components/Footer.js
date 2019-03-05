@@ -12,7 +12,7 @@ export default function Footer() {
                     alt="banner with purple pundit logo"
                 />
                 <p style={{ color: "white", marginTop: "1px" }}>
-                    PurplePundit.co V1.0.0     ᛫     Developed by Allan Serna & Jahziel Villasana     ᛫     Powered by NewsApi.org
+                    PurplePundit.co v1.0.1     ᛫     Developed by Allan Serna & Jahziel Villasana     ᛫     Powered by NewsApi.org
                 </p>
             </div>
         </div>

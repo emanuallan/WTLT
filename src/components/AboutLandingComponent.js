@@ -13,6 +13,41 @@ export class AboutLandingComponent extends React.Component {
         return (
             <div id="mainBlock" style={{ width: "100%", margin: "auto", background: "lavender" }}>
                 <Grid container>
+                    <Grid xs={12} style={{}}>
+                        < div className="header-top-menuContainer" >
+                            <Button
+                                variant="text"
+                                size="small"
+                                className="header-top-buttons"
+                                style={{ textTransform: "none", color: "#5F4BB6", fontSize: "95%" }}
+                                onClick={() => history.push("/")}
+                            >
+                                {" "}
+                                Home{" "}
+                            </Button>
+
+                            <Button
+                                variant="text"
+                                size="small"
+                                className="header-top-buttons"
+                                style={{ textTransform: "none", color: "#5F4BB6", fontSize: "95%" }}
+                                onClick={() => history.push("/about")}
+                            >
+                                {" "}
+                                About{" "}
+                            </Button>
+
+                        </div>
+                    </Grid>
+
+                    <Grid item xs={12}>
+                        <img
+                            src={Banner}
+                            style={{ width: "100%", borderBottom: "1.5rem solid #5F4BB6" }}
+                            alt="banner with purple pundit logo"
+                        />
+                    </Grid>
+
                     <Grid xs={4} className="landing-grid">
 
                         <h1 style={{ color: "#5F4BB6", fontSize: "320%", marginTop: "6%", marginBottom: "0px" }}> Creators of</h1>
@@ -29,7 +64,7 @@ export class AboutLandingComponent extends React.Component {
                                 Detecting and understanding bias is an important aspect of politics.
                                 Therefore, the Purple Pundit project was created to better simplify and display the political differences
                                 that exist within each of the major media news outlets available. Thanks to the <a href="https://newsapi.org">NewsApi.org</a>, Purple Pundit currently features over 50 media sources including
-                                CNN, MSNBC, Fox News, The Washington Times, amongst others. The color that determines the political bias of each of the sources is determined by the
+                            CNN, MSNBC, Fox News, The Washington Times, amongst others. The color that determines the political bias of each of the sources is determined by the
                                 <a href="https://mediabiasfactcheck.com/"> Media Bias Fact Checker</a>.
                             </p>
                             <p style={{ fontSize: "95%", textAlign: "left", paddingTop: "5%" }}>
@@ -92,7 +127,7 @@ export class AboutLandingComponent extends React.Component {
                                 {" "}
                                 4th Year Computer Science Student at the <span style={{ color: "#B3A369" }}><b>Georgia
                                 Institute of Technology</b></span> with a minor in Society, Sports, and Technology from the GT
-                                School of History and Sociology.
+                            School of History and Sociology.
                                 {" "}
                             </p>
 
@@ -194,7 +229,7 @@ export class AboutLandingComponent extends React.Component {
                         </div>
                     </Grid>
                 </Grid>
-            </div>
+            </div >
         );
     }
 }

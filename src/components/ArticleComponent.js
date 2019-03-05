@@ -17,7 +17,7 @@ export default function ArticleComponent(props) {
     }
 
     return (
-        <a href={props.article.url}>
+        <a href={props.article.url} rel="noopener noreferrer" target="_blank">
             <div className={"news-container " + props.className}>
                 <Grid container>
 
