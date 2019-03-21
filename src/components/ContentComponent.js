@@ -127,28 +127,22 @@ export class ContentComponent extends React.Component {
             <React.Fragment>
                 <TitleComponent topic={topic} />
                 {/* NOTE: CERTAIN INFO WON'T APPEAR IF THE API DOES NOT RETURN A VALUE */}
-                <Grid container style={{ background: "lavender" }}>
-                    {/* <Grid item xs={12} style={{ textAlign: "center" }}>
-                        {this.state.totalResults && (
-                            <Typography
-                                variant="subtitle1"
-                                style={{ textAlign: "right" }}
-                            >
-                                Hits: {this.state.totalResults}
-                            </Typography>
-                        )}
-                        <Button
-                            variant="outlined"
-                            onClick={() => {
-                                this.setState({ loading: true });
-                            }}
-                        >
-                            {" "}
-                            Refresh{" "}
-                        </Button>
-                    </Grid> */}
-
-                    <Grid item xs={6} style={{ marginTop: 5 }}>
+                <Grid
+                    container
+                    justify="center"
+                    // alignContent="center"
+                    alignItems="center"
+                    style={{ background: "lavender" }}
+                >
+                    <Grid
+                        container
+                        justify="center"
+                        // alignContent="center"
+                        alignItems="center"
+                        item
+                        xs={6}
+                        style={{ marginTop: 5 }}
+                    >
                         {this.state.libArticles &&
                             this.state.libArticles.map(art => (
                                 <ArticleComponent
@@ -159,7 +153,15 @@ export class ContentComponent extends React.Component {
                             ))}
                     </Grid>
 
-                    <Grid item xs={6} style={{ marginTop: 5 }}>
+                    <Grid
+                        container
+                        justify="center"
+                        // alignContent="center"
+                        alignItems="center"
+                        item
+                        xs={6}
+                        style={{ marginTop: 5 }}
+                    >
                         {this.state.consArticles &&
                             this.state.consArticles.map(art => (
                                 <ArticleComponent
