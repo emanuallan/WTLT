@@ -85,7 +85,7 @@ class ArticleComponent extends React.Component {
         return (
             <Card
                 className={classnames(classes.card, sideColorClass)}
-                data-aos="fade-down"
+                data-aos="fade-up"
             >
                 <CardHeader
                     title={this.props.article.title}
