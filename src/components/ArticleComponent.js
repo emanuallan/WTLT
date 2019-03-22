@@ -2,22 +2,51 @@ import React from "react";
 import Moment from "moment";
 import logo from "../assets/logo.jpg";
 import Grid from "@material-ui/core/Grid";
-import { Card, CardHeader, CardMedia, Typography } from "@material-ui/core";
+import classnames from "classnames";
+import {
+    Card,
+    CardHeader,
+    CardMedia,
+    Typography,
+    Avatar,
+    IconButton,
+    Collapse,
+    CardContent
+} from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import ShareIcon from "@material-ui/icons/Share";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-const styles = theme => ({
+let styles = theme => ({
     card: {
         maxWidth: 400,
-        margin: "1%"
+        marginBottom: "10px"
     },
     media: {
         height: 0,
         paddingTop: "56.25%" // 16:9
+    },
+    expand: {
+        transform: "rotate(0deg)",
+        marginLeft: "auto",
+        transition: theme.transitions.create("transform", {
+            duration: theme.transitions.duration.shortest
+        })
+    },
+    expandOpen: {
+        transform: "rotate(180deg)"
     }
 });
 
 class ArticleComponent extends React.Component {
+    state = { expanded: false };
+
+    handleExpandClick = () => {
+        this.setState({ expanded: !this.state.expanded });
+    };
+
     render() {
         Moment.locale("en");
         var date = this.props.article.publishedAt;
@@ -31,6 +60,12 @@ class ArticleComponent extends React.Component {
             image = logo;
         }
         let { classes } = this.props;
+        let avatarColor;
+        if (this.props.side === "L") {
+            avatarColor = { backgroundColor: "#60afff" };
+        } else {
+            avatarColor = { backgroundColor: "#ba1f1f" };
+        }
         return (
             // <a href={props.article.url} rel="noopener noreferrer" target="_blank">
             //     <div className={"news-container " + props.className}>
@@ -62,8 +97,41 @@ class ArticleComponent extends React.Component {
                         // </Typography>
                     }
                     subheader={author}
+                    avatar={
+                        <Avatar aria-label="political-side" style={avatarColor}>
+                            {this.props.side}
+                        </Avatar>
+                    }
+                    action={
+                        <IconButton>
+                            <MoreVertIcon />
+                        </IconButton>
+                    }
                 />
                 <CardMedia className={classes.media} image={image} title="the image" />
+                <IconButton>
+                    <ShareIcon />
+                </IconButton>
+
+                <IconButton
+                    className={classnames(classes.expand, {
+                        [classes.expandOpen]: this.state.expanded
+                    })}
+                    onClick={this.handleExpandClick}
+                    aria-expanded={this.state.expanded}
+                    aria-label="Show more"
+                >
+                    <ExpandMoreIcon />
+                </IconButton>
+
+                {/* Expand for the article description */}
+                <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+                    <CardContent>
+                        <Typography paragraph>
+                            {this.props.article.description}
+                        </Typography>
+                    </CardContent>
+                </Collapse>
             </Card>
         );
     }

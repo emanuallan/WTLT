@@ -130,14 +130,15 @@ export class ContentComponent extends React.Component {
                 <Grid
                     container
                     justify="center"
-                    // alignContent="center"
+                    alignContent="center"
                     alignItems="center"
                     style={{ background: "lavender" }}
                 >
                     <Grid
                         container
+                        direction="column"
                         justify="center"
-                        // alignContent="center"
+                        alignContent="center"
                         alignItems="center"
                         item
                         xs={6}
@@ -148,6 +149,7 @@ export class ContentComponent extends React.Component {
                                 <ArticleComponent
                                     article={art}
                                     className="lib-news-container"
+                                    side="L"
                                     key={this.state.libArticles.indexOf(art)}
                                 />
                             ))}
@@ -155,8 +157,9 @@ export class ContentComponent extends React.Component {
 
                     <Grid
                         container
+                        direction="column"
                         justify="center"
-                        // alignContent="center"
+                        alignContent="center"
                         alignItems="center"
                         item
                         xs={6}
@@ -167,6 +170,7 @@ export class ContentComponent extends React.Component {
                                 <ArticleComponent
                                     article={art}
                                     className="cons-news-container"
+                                    side="C"
                                     key={this.state.consArticles.indexOf(art)}
                                 />
                             ))}
