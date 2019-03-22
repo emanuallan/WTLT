@@ -130,14 +130,14 @@ export class ContentComponent extends React.Component {
                 <Grid
                     container
                     justify="center"
-                    alignContent="center"
-                    alignItems="center"
+                    alignContent="flex-start"
+                    // alignItems="center"
                     style={{ background: "lavender" }}
                 >
                     <Grid
                         container
                         direction="column"
-                        justify="center"
+                        justify="flex-start"
                         alignContent="center"
                         alignItems="center"
                         item
@@ -158,7 +158,7 @@ export class ContentComponent extends React.Component {
                     <Grid
                         container
                         direction="column"
-                        justify="center"
+                        justify="flex-start"
                         alignContent="center"
                         alignItems="center"
                         item
