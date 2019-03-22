@@ -1,19 +1,16 @@
 import React from "react";
 import Moment from "moment";
 import logo from "../assets/logo.jpg";
-import Grid from "@material-ui/core/Grid";
 import classnames from "classnames";
 import {
     Card,
     CardHeader,
     CardMedia,
     Typography,
-    Avatar,
     IconButton,
     Collapse,
     CardContent,
-    CardActions,
-    Button
+    CardActions
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
@@ -25,7 +22,7 @@ import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 let styles = theme => ({
     card: {
         maxWidth: 400,
-        marginBottom: "10px"
+        marginBottom: "50px"
     },
     media: {
         height: 0,
@@ -86,7 +83,10 @@ class ArticleComponent extends React.Component {
         }
 
         return (
-            <Card className={classnames(classes.card, sideColorClass)}>
+            <Card
+                className={classnames(classes.card, sideColorClass)}
+                data-aos="fade-down"
+            >
                 <CardHeader
                     title={this.props.article.title}
                     subheader={author}
