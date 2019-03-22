@@ -1,7 +1,7 @@
-import React from 'react';
-import Button from '@material-ui/core/Button';
-import Menu from '@material-ui/core/Menu';
-import MenuItem from '@material-ui/core/MenuItem';
+import React from "react";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
 import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 
@@ -15,6 +15,10 @@ export class MenuButtonComponent extends React.Component {
 
     handleClick = event => {
         this.setState({ anchorEl: event.currentTarget });
+    };
+
+    handleClose = () => {
+        this.setState({ anchorEl: null });
     };
 
     handleClosePP = () => {
@@ -103,7 +107,7 @@ export class MenuButtonComponent extends React.Component {
                     variant="text"
                     className="header-bottom-buttons"
                     style={{ textTransform: "none", color: "white", fontSize: "110%" }}
-                    aria-owns={anchorEl ? 'simple-menu' : undefined}
+                    aria-owns={anchorEl ? "simple-menu" : undefined}
                     aria-haspopup="true"
                     onClick={this.handleClick}
                 >
@@ -128,7 +132,9 @@ export class MenuButtonComponent extends React.Component {
                     <MenuItem onClick={this.handleCloseMW}>Minimum Wage</MenuItem>
                     <MenuItem onClick={this.handleCloseNN}>Net Neutrality</MenuItem>
                     <MenuItem onClick={this.handleCloseNK}>North Korea</MenuItem>
-                    <MenuItem onClick={this.handleCloseISec}>Information Security</MenuItem>
+                    <MenuItem onClick={this.handleCloseISec}>
+                        Information Security
+                    </MenuItem>
                     <MenuItem onClick={this.handleCloseSS}>Social Security</MenuItem>
                     <MenuItem onClick={this.handleCloseT}>Taxes</MenuItem>
                     <MenuItem onClick={this.handleCloseTRR}>Terrorism</MenuItem>
@@ -157,4 +163,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(MenuButtonComponent)
+)(MenuButtonComponent);

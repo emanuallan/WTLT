@@ -11,13 +11,16 @@ import {
     Avatar,
     IconButton,
     Collapse,
-    CardContent
+    CardContent,
+    CardActions,
+    Button
 } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import ShareIcon from "@material-ui/icons/Share";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 
 let styles = theme => ({
     card: {
@@ -37,6 +40,17 @@ let styles = theme => ({
     },
     expandOpen: {
         transform: "rotate(180deg)"
+    },
+    actions: {
+        display: "flex"
+    },
+
+    libContainer: {
+        backgroundColor: "rgba(51,102,255,0.5)" /*"#ba1f1f"*/
+    },
+
+    consContainer: {
+        backgroundColor: "rgba(186,31,31,0.5)"
     }
 });
 
@@ -49,80 +63,65 @@ class ArticleComponent extends React.Component {
 
     render() {
         Moment.locale("en");
-        var date = this.props.article.publishedAt;
-        var author = this.props.article.author;
-        var image = this.props.article.urlToImage;
-        if (!author || author.length <= 0) {
-            author = "an unnamed journalist at " + this.props.article.source.name;
+        let image = this.props.article.urlToImage;
+        let author;
+        if (!this.props.article.author || this.props.article.author.length <= 0) {
+            author = this.props.article.source.name;
+        } else {
+            author =
+                this.props.article.author + " for " + this.props.article.source.name;
         }
 
         if (!image || image.length <= 0) {
             image = logo;
         }
         let { classes } = this.props;
-        let avatarColor;
-        if (this.props.side === "L") {
-            avatarColor = { backgroundColor: "#60afff" };
+
+        let isLib = this.props.side === "L";
+        let sideColorClass;
+        if (isLib) {
+            sideColorClass = classes.libContainer;
         } else {
-            avatarColor = { backgroundColor: "#ba1f1f" };
+            sideColorClass = classes.consContainer;
         }
+
         return (
-            // <a href={props.article.url} rel="noopener noreferrer" target="_blank">
-            //     <div className={"news-container " + props.className}>
-            //         <Grid container>
-
-            //             <Grid item xs={4}>
-            //                 <img src={image} alt="newsImage" className="center"></img>
-            //                 <p style={{ fontSize: "280%", textAlign: "left", margin: "0px", marginTop: "5%" }}><b>{props.article.source.name}</b></p>
-            //             </Grid>
-
-            //             <Grid item xs={8}>
-            //                 <h2 className="raisedbox" style={{ marginLeft: "17%", fontSize: "150%" }}>{props.article.title}</h2>
-            //                 <p className="raisedbox" style={{ marginLeft: "34%", padding: "5px", fontSize: "95%" }}> {props.article.description}</p>
-            //                 <p className="right" style={{ borderTop: "1px solid white", marginLeft: "10%" }}>Written by {author}</p>
-            //                 <p className="right">{Moment(date).format('LLL')}</p>
-            //             </Grid>
-
-            //             {/* <p><a href={props.article.url}>{props.article.url}</a></p> */}
-
-            //         </Grid>
-            //     </div>
-            // </a >
-
-            <Card className={classes.card}>
+            <Card className={classnames(classes.card, sideColorClass)}>
                 <CardHeader
-                    title={
-                        // <Typography variant="display1">
-                        this.props.article.title
-                        // </Typography>
-                    }
+                    title={this.props.article.title}
                     subheader={author}
-                    avatar={
-                        <Avatar aria-label="political-side" style={avatarColor}>
-                            {this.props.side}
-                        </Avatar>
-                    }
                     action={
                         <IconButton>
                             <MoreVertIcon />
                         </IconButton>
                     }
                 />
-                <CardMedia className={classes.media} image={image} title="the image" />
-                <IconButton>
-                    <ShareIcon />
-                </IconButton>
+                <CardMedia
+                    className={classes.media}
+                    image={image}
+                    title="Article Image"
+                />
+                <CardActions className={classes.actions} disableActionSpacing>
+                    <IconButton>
+                        <ShareIcon />
+                    </IconButton>
 
-                <IconButton
-                    className={classnames(classes.expand, {
-                        [classes.expandOpen]: this.state.expanded
-                    })}
-                    onClick={this.handleExpandClick}
-                    aria-expanded={this.state.expanded}
-                    aria-label="Show more"
-                >
-                    <ExpandMoreIcon />
-                </IconButton>
+                    {/* Keep Reading */}
+                    <IconButton onClick={_ => window.open(this.props.article.url)}>
+                        <OpenInNewIcon />
+                    </IconButton>
+
+                    <IconButton
+                        className={classnames(classes.expand, {
+                            [classes.expandOpen]: this.state.expanded
+                        })}
+                        onClick={this.handleExpandClick}
+                        aria-expanded={this.state.expanded}
+                        aria-label="Show more"
+                    >
+                        <ExpandMoreIcon />
+                    </IconButton>
+                </CardActions>
 
                 {/* Expand for the article description */}
                 <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
