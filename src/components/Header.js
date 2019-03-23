@@ -50,7 +50,7 @@ export class Header extends React.Component {
         this.props.setTopic("Trump");
     }
 
-    componentDidMount() { }
+    componentDidMount() {}
 
     render() {
         return (
@@ -62,7 +62,11 @@ export class Header extends React.Component {
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#5F4BB6", fontSize: "95%" }}
+                                style={{
+                                    textTransform: "none",
+                                    color: "#5F4BB6",
+                                    fontSize: "95%"
+                                }}
                                 onClick={() => history.push("/")}
                             >
                                 {" "}
@@ -90,7 +94,11 @@ export class Header extends React.Component {
                                 variant="text"
                                 size="small"
                                 className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#5F4BB6", fontSize: "95%" }}
+                                style={{
+                                    textTransform: "none",
+                                    color: "#5F4BB6",
+                                    fontSize: "95%"
+                                }}
                                 onClick={() => history.push("/about")}
                             >
                                 {" "}
@@ -115,20 +123,24 @@ export class Header extends React.Component {
                                 Contact Us{" "}
                             </Button> */}
                         </div>
-                        <Grid item xs={12}>
+                        {/* <Grid item xs={12}>
                             <img
                                 src={Banner}
                                 style={{ width: "100%" }}
                                 alt="banner with purple pundit logo"
                             />
-                        </Grid>
+                        </Grid> */}
 
                         <Grid item xs={12}>
                             <div className="header-bottom-menuContainer">
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "white", fontSize: "110%" }}
+                                    style={{
+                                        textTransform: "none",
+                                        color: "white",
+                                        fontSize: "110%"
+                                    }}
                                     onClick={this.onTopic1Click}
                                 >
                                     {" "}
@@ -137,7 +149,11 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "white", fontSize: "110%" }}
+                                    style={{
+                                        textTransform: "none",
+                                        color: "white",
+                                        fontSize: "110%"
+                                    }}
                                     onClick={this.onTopic2Click}
                                 >
                                     {" "}
@@ -146,7 +162,11 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "white", fontSize: "110%" }}
+                                    style={{
+                                        textTransform: "none",
+                                        color: "white",
+                                        fontSize: "110%"
+                                    }}
                                     onClick={this.onTopic3Click}
                                 >
                                     {" "}
@@ -155,7 +175,11 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "white", fontSize: "110%" }}
+                                    style={{
+                                        textTransform: "none",
+                                        color: "white",
+                                        fontSize: "110%"
+                                    }}
                                     onClick={this.onTopic4Click}
                                 >
                                     {" "}
@@ -164,7 +188,11 @@ export class Header extends React.Component {
                                 <Button
                                     variant="text"
                                     className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "white", fontSize: "110%" }}
+                                    style={{
+                                        textTransform: "none",
+                                        color: "white",
+                                        fontSize: "110%"
+                                    }}
                                     onClick={this.onTopic5Click}
                                 >
                                     {" "}

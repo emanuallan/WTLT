@@ -130,7 +130,7 @@ export class ContentComponent extends React.Component {
                     justify="center"
                     alignContent="flex-start"
                     // alignItems="center"
-                    style={{ background: "lavender" }}
+                    // style={{ background: "lavender" }}
                 >
                     <Grid
                         container
