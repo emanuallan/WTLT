@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@material-ui/core/Button";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import Typography from "@material-ui/core/Typography";
 import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 
@@ -106,12 +107,12 @@ export class MenuButtonComponent extends React.Component {
                 <Button
                     variant="text"
                     className="header-bottom-buttons"
-                    style={{ textTransform: "none", color: "white", fontSize: "110%" }}
+                    style={{ textTransform: "none", color: "purple", fontSize: "110%" }}
                     aria-owns={anchorEl ? "simple-menu" : undefined}
                     aria-haspopup="true"
                     onClick={this.handleClick}
                 >
-                    Other
+                    <Typography variant="button">Other</Typography>
                 </Button>
                 <Menu
                     id="simple-menu"

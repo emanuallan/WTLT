@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 import Banner from "../assets/Banner.jpg";
@@ -9,7 +10,7 @@ import history from "../routers/purplehistory";
 import { withStyles } from "@material-ui/core/styles";
 import classnames from "classnames";
 import PropTypes from "prop-types";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/ppLogo.png";
 
 const styles = theme => ({
     buttonText: {
@@ -80,8 +81,7 @@ export class Header extends React.Component {
                                 }}
                                 onClick={() => history.push("/")}
                             >
-                                {" "}
-                                Home{" "}
+                                Home
                             </Button>
 
                             <Button
@@ -120,8 +120,7 @@ export class Header extends React.Component {
                                         "header-bottom-buttons"
                                     )}
                                 >
-                                    {" "}
-                                    Latest{" "}
+                                    <Typography variant="button">Latest</Typography>
                                 </Button>
                                 <Button
                                     variant="text"
@@ -135,8 +134,9 @@ export class Header extends React.Component {
                                     }}
                                     onClick={this.onTopic2Click}
                                 >
-                                    {" "}
-                                    Immigration{" "}
+                                    <Typography variant="button">
+                                        Immigration
+                                    </Typography>
                                 </Button>
                                 <Button
                                     variant="text"
@@ -150,8 +150,7 @@ export class Header extends React.Component {
                                     }}
                                     onClick={this.onTopic3Click}
                                 >
-                                    {" "}
-                                    LGBTQ{" "}
+                                    <Typography variant="button">LGBTQ</Typography>
                                 </Button>
                                 <Button
                                     variant="text"
@@ -165,8 +164,7 @@ export class Header extends React.Component {
                                     }}
                                     onClick={this.onTopic4Click}
                                 >
-                                    {" "}
-                                    Abortion{" "}
+                                    <Typography variant="button">Abortion</Typography>
                                 </Button>
                                 <Button
                                     variant="text"
@@ -180,8 +178,7 @@ export class Header extends React.Component {
                                     }}
                                     onClick={this.onTopic5Click}
                                 >
-                                    {" "}
-                                    Gun Policy{" "}
+                                    <Typography variant="button">Gun Policy</Typography>
                                 </Button>
 
                                 <MenuButtonComponent />
