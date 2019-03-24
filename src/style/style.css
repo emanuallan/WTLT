@@ -16,7 +16,7 @@
 .header-bottom-menuContainer {
     display: flex;
     margin-top:-4px;
-    background: #5F4BB6;
+    /* background: #5F4BB6; */
 }
 
 
@@ -48,8 +48,8 @@
     margin-right: 1.5%;
     border-radius: 20px;
     padding: 1rem;
-    color: whitesmoke;
-    border:1px #505050 solid
+    /* color: whitesmoke; */
+    /* border:px #505050 solid */
 }
 
 
@@ -68,12 +68,12 @@
 }
 
 .news-container a{
-    color:lavender;
+    /* color:lavender; */
 }
 
 .footer-style {
     background-color: #5F4BB6;
-    border: 1px solid #aaa;
+    /* border: 1px solid #aaa; */
     text-align: center;
     left: 0;
     bottom: 0;

@@ -6,6 +6,16 @@ import { setTopic } from "../redux/topics-reducer";
 import Banner from "../assets/Banner.jpg";
 import MenuButtonComponent from "./MenuButtonComponent";
 import history from "../routers/purplehistory";
+import { withStyles } from "@material-ui/core/styles";
+import classnames from "classnames";
+import PropTypes from "prop-types";
+import logo from "../assets/logo.jpg";
+
+const styles = theme => ({
+    buttonText: {
+        color: "purple"
+    }
+});
 
 export class Header extends React.Component {
     constructor(props) {
@@ -53,10 +63,11 @@ export class Header extends React.Component {
     componentDidMount() {}
 
     render() {
+        const { classes } = this.props;
         return (
             <React.Fragment>
                 <div className="header-wrapper">
-                    <Grid container>
+                    <Grid container justify="center">
                         <div className="header-top-menuContainer">
                             <Button
                                 variant="text"
@@ -72,24 +83,7 @@ export class Header extends React.Component {
                                 {" "}
                                 Home{" "}
                             </Button>
-                            {/* <Button
-                                variant="text"
-                                size="small"
-                                className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#5F4BB6" }}
-                            >
-                                {" "}
-                                Forum{" "}
-                            </Button>
-                            <Button
-                                variant="text"
-                                size="small"
-                                className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#5F4BB6" }}
-                            >
-                                {" "}
-                                Chat{" "}
-                            </Button> */}
+
                             <Button
                                 variant="text"
                                 size="small"
@@ -104,54 +98,39 @@ export class Header extends React.Component {
                                 {" "}
                                 About{" "}
                             </Button>
-                            {/* <Button
-                                variant="text"
-                                size="small"
-                                className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#5F4BB6" }}
-                            >
-                                {" "}
-                                FAQ{" "}
-                            </Button>
-                            <Button
-                                variant="text"
-                                size="small"
-                                className="header-top-buttons"
-                                style={{ textTransform: "none", color: "#5F4BB6" }}
-                            >
-                                {" "}
-                                Contact Us{" "}
-                            </Button> */}
                         </div>
-                        {/* <Grid item xs={12}>
-                            <img
-                                src={Banner}
-                                style={{ width: "100%" }}
-                                alt="banner with purple pundit logo"
-                            />
-                        </Grid> */}
+                        <img
+                            src={logo}
+                            style={{ width: "10%", alignSelf: "center" }}
+                            alt="banner with purple pundit logo"
+                        />
 
                         <Grid item xs={12}>
                             <div className="header-bottom-menuContainer">
                                 <Button
                                     variant="text"
-                                    className="header-bottom-buttons"
                                     style={{
                                         textTransform: "none",
-                                        color: "white",
+                                        // color: "white",
                                         fontSize: "110%"
                                     }}
                                     onClick={this.onTopic1Click}
+                                    className={classnames(
+                                        classes.buttonText,
+                                        "header-bottom-buttons"
+                                    )}
                                 >
                                     {" "}
                                     Latest{" "}
                                 </Button>
                                 <Button
                                     variant="text"
-                                    className="header-bottom-buttons"
+                                    className={classnames(
+                                        classes.buttonText,
+                                        "header-bottom-buttons"
+                                    )}
                                     style={{
                                         textTransform: "none",
-                                        color: "white",
                                         fontSize: "110%"
                                     }}
                                     onClick={this.onTopic2Click}
@@ -161,10 +140,12 @@ export class Header extends React.Component {
                                 </Button>
                                 <Button
                                     variant="text"
-                                    className="header-bottom-buttons"
+                                    className={classnames(
+                                        classes.buttonText,
+                                        "header-bottom-buttons"
+                                    )}
                                     style={{
                                         textTransform: "none",
-                                        color: "white",
                                         fontSize: "110%"
                                     }}
                                     onClick={this.onTopic3Click}
@@ -174,10 +155,12 @@ export class Header extends React.Component {
                                 </Button>
                                 <Button
                                     variant="text"
-                                    className="header-bottom-buttons"
+                                    className={classnames(
+                                        classes.buttonText,
+                                        "header-bottom-buttons"
+                                    )}
                                     style={{
                                         textTransform: "none",
-                                        color: "white",
                                         fontSize: "110%"
                                     }}
                                     onClick={this.onTopic4Click}
@@ -187,10 +170,12 @@ export class Header extends React.Component {
                                 </Button>
                                 <Button
                                     variant="text"
-                                    className="header-bottom-buttons"
+                                    className={classnames(
+                                        classes.buttonText,
+                                        "header-bottom-buttons"
+                                    )}
                                     style={{
                                         textTransform: "none",
-                                        color: "white",
                                         fontSize: "110%"
                                     }}
                                     onClick={this.onTopic5Click}
@@ -198,15 +183,7 @@ export class Header extends React.Component {
                                     {" "}
                                     Gun Policy{" "}
                                 </Button>
-                                {/* <Button
-                                    variant="text"
-                                    className="header-bottom-buttons"
-                                    style={{ textTransform: "none", color: "lavender" }}
-                                    onClick={this.onTopic6Click}
-                                >
-                                    {" "}
-                                    Other{" "}
-                                </Button> */}
+
                                 <MenuButtonComponent />
                             </div>
                         </Grid>
@@ -231,7 +208,11 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
+Header.propTypes = {
+    classes: PropTypes.object.isRequired
+};
+const HeaderE = withStyles(styles)(Header);
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Header);
+)(HeaderE);
