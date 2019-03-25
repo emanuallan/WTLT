@@ -1,5 +1,6 @@
 import React from "react";
 import { Tabs, Tab } from "@material-ui/core";
+import ArticleStream from "./ArticleStreamComponent";
 
 class MobileContentComponent extends React.Component {
     render() {

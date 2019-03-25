@@ -6,6 +6,7 @@ import { setTopic } from "../redux/topics-reducer";
 import Grid from "@material-ui/core/Grid";
 import ReactGrid from "@material-ui/core/Grid";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import ArticleStream from "./ArticleStreamComponent";
 
 /* State Configuration */
 export class ContentComponent extends React.Component {
@@ -132,7 +133,7 @@ export class ContentComponent extends React.Component {
                     // alignItems="center"
                     // style={{ background: "lavender" }}
                 >
-                    <Grid
+                    {/* <Grid
                         container
                         direction="column"
                         justify="flex-start"
@@ -151,9 +152,15 @@ export class ContentComponent extends React.Component {
                                     key={this.state.libArticles.indexOf(art)}
                                 />
                             ))}
-                    </Grid>
+                    </Grid> */}
+                    {this.state.libArticles && (
+                        <ArticleStream
+                            articleData={this.state.libArticles}
+                            streamSide="L"
+                        />
+                    )}
 
-                    <Grid
+                    {/* <Grid
                         container
                         direction="column"
                         justify="flex-start"
@@ -172,7 +179,13 @@ export class ContentComponent extends React.Component {
                                     key={this.state.consArticles.indexOf(art)}
                                 />
                             ))}
-                    </Grid>
+                    </Grid> */}
+                    {this.state.consArticles && (
+                        <ArticleStream
+                            articleData={this.state.consArticles}
+                            streamSide="C"
+                        />
+                    )}
                 </Grid>
             </React.Fragment>
         );
