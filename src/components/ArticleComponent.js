@@ -21,7 +21,7 @@ import OpenInNewIcon from "@material-ui/icons/OpenInNew";
 
 let styles = theme => ({
     card: {
-        maxWidth: 400,
+        width: 550,
         marginBottom: "50px"
     },
     media: {

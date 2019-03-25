@@ -107,12 +107,14 @@ export class MenuButtonComponent extends React.Component {
                 <Button
                     variant="text"
                     className="header-bottom-buttons"
-                    style={{ textTransform: "none", color: "purple", fontSize: "110%" }}
+                    style={{ textTransform: "none", fontSize: "110%" }}
                     aria-owns={anchorEl ? "simple-menu" : undefined}
                     aria-haspopup="true"
                     onClick={this.handleClick}
                 >
-                    <Typography variant="button">Other</Typography>
+                    <Typography style={{ color: "purple" }} variant="button">
+                        Other
+                    </Typography>
                 </Button>
                 <Menu
                     id="simple-menu"
