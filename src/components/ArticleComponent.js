@@ -90,11 +90,11 @@ class ArticleComponent extends React.Component {
                 <CardHeader
                     title={this.props.article.title}
                     subheader={author}
-                    action={
-                        <IconButton>
-                            <MoreVertIcon />
-                        </IconButton>
-                    }
+                    // action={
+                    // <IconButton>
+                    //     <MoreVertIcon />
+                    // </IconButton>
+                    // }
                 />
                 <CardMedia
                     className={classes.media}
@@ -102,9 +102,9 @@ class ArticleComponent extends React.Component {
                     title="Article Image"
                 />
                 <CardActions className={classes.actions} disableActionSpacing>
-                    <IconButton>
+                    {/* <IconButton>
                         <ShareIcon />
-                    </IconButton>
+                    </IconButton> */}
 
                     {/* Keep Reading */}
                     <IconButton onClick={_ => window.open(this.props.article.url)}>
