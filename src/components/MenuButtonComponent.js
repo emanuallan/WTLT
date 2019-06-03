@@ -24,7 +24,7 @@ export class MenuButtonComponent extends React.Component {
 
     handleClosePP = () => {
         this.setState({ anchorEl: null });
-        this.props.setTopic("Planned Parenthood Funding");
+        this.props.setTopic("Planned Parenthood");
     };
     handleCloseGI = () => {
         this.setState({ anchorEl: null });

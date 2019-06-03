@@ -10,12 +10,7 @@ export default class HomePage extends React.Component {
         return (
             <React.Fragment>
                 <Header />
-                <MediaQuery query="(max-device-width: 480px)">
-                    <Mobile />
-                </MediaQuery>
-                <MediaQuery query="(min-device-width: 1224px)">
-                    <ContentComponent />
-                </MediaQuery>
+                <ContentComponent />
                 <Footer />
             </React.Fragment>
         );

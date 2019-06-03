@@ -5,8 +5,12 @@ import { connect } from "react-redux";
 import { setTopic } from "../redux/topics-reducer";
 import Grid from "@material-ui/core/Grid";
 import ReactGrid from "@material-ui/core/Grid";
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import ArticleStream from "./ArticleStreamComponent";
+import MediaQuery from "react-responsive";
+import MobileContent from "./MobileContentComponent";
 
 /* State Configuration */
 export class ContentComponent extends React.Component {
@@ -122,70 +126,38 @@ export class ContentComponent extends React.Component {
                 </ReactGrid>
             );
         }
+        console.info("here");
         return (
             <React.Fragment>
                 <TitleComponent topic={topic} />
-                {/* NOTE: CERTAIN INFO WON'T APPEAR IF THE API DOES NOT RETURN A VALUE */}
-                <Grid
-                    container
-                    justify="center"
-                    alignContent="flex-start"
-                    // alignItems="center"
-                    // style={{ background: "lavender" }}
-                >
-                    {/* <Grid
-                        container
-                        direction="column"
-                        justify="flex-start"
-                        alignContent="center"
-                        alignItems="center"
-                        item
-                        xs={6}
-                        style={{ marginTop: 5 }}
-                    >
-                        {this.state.libArticles &&
-                            this.state.libArticles.map(art => (
-                                <ArticleComponent
-                                    article={art}
-                                    className="lib-news-container"
-                                    side="L"
-                                    key={this.state.libArticles.indexOf(art)}
+                <Grid container justify="center" alignContent="flex-start">
+                    <MediaQuery query="(max-device-width: 480px)">
+                        <div key={Math.random() * 100}>
+                            {this.state.libArticles && this.state.consArticles && (
+                                <MobileContent
+                                    cArticles={this.state.consArticles}
+                                    lArticles={this.state.libArticles}
                                 />
-                            ))}
-                    </Grid> */}
-                    {this.state.libArticles && (
-                        <ArticleStream
-                            articleData={this.state.libArticles}
-                            streamSide="L"
-                        />
-                    )}
+                            )}
+                        </div>
+                    </MediaQuery>
 
-                    {/* <Grid
-                        container
-                        direction="column"
-                        justify="flex-start"
-                        alignContent="center"
-                        alignItems="center"
-                        item
-                        xs={6}
-                        style={{ marginTop: 5 }}
-                    >
-                        {this.state.consArticles &&
-                            this.state.consArticles.map(art => (
-                                <ArticleComponent
-                                    article={art}
-                                    className="cons-news-container"
-                                    side="C"
-                                    key={this.state.consArticles.indexOf(art)}
-                                />
-                            ))}
-                    </Grid> */}
-                    {this.state.consArticles && (
-                        <ArticleStream
-                            articleData={this.state.consArticles}
-                            streamSide="C"
-                        />
-                    )}
+                    {/* NOTE: CERTAIN INFO WON'T APPEAR IF THE API DOES NOT RETURN A VALUE */}
+                    <MediaQuery query="(min-device-width: 1224px)">
+                        {this.state.libArticles && (
+                            <ArticleStream
+                                articleData={this.state.libArticles}
+                                streamSide="L"
+                            />
+                        )}
+
+                        {this.state.consArticles && (
+                            <ArticleStream
+                                articleData={this.state.consArticles}
+                                streamSide="C"
+                            />
+                        )}
+                    </MediaQuery>
                 </Grid>
             </React.Fragment>
         );

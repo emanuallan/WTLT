@@ -117,25 +117,93 @@ export class Header extends React.Component {
 
                         <Grid item xs={12}>
                             <div className="header-bottom-menuContainer">
-                                {headerTopics.map(topic => (
-                                    <Button
-                                        variant="text"
-                                        style={{
-                                            textTransform: "none",
-                                            // color: "white",
-                                            fontSize: "110%"
-                                        }}
-                                        onClick={this.onTopic1Click}
-                                        className={"header-bottom-buttons"}
+                                {/* {headerTopics.map(topic => ( */}
+                                <Button
+                                    variant="text"
+                                    style={{
+                                        textTransform: "none",
+                                        // color: "white",
+                                        fontSize: "110%"
+                                    }}
+                                    onClick={this.onTopic1Click}
+                                    className={"header-bottom-buttons"}
+                                >
+                                    <Typography
+                                        variant="button"
+                                        className={classes.buttonText}
                                     >
-                                        <Typography
-                                            variant="button"
-                                            className={classes.buttonText}
-                                        >
-                                            {topic}
-                                        </Typography>
-                                    </Button>
-                                ))}
+                                        Latest
+                                    </Typography>
+                                </Button>
+                                {/* // ))} */}
+                                <Button
+                                    variant="text"
+                                    style={{
+                                        textTransform: "none",
+                                        // color: "white",
+                                        fontSize: "110%"
+                                    }}
+                                    onClick={this.onTopic2Click}
+                                    className={"header-bottom-buttons"}
+                                >
+                                    <Typography
+                                        variant="button"
+                                        className={classes.buttonText}
+                                    >
+                                        Immigration
+                                    </Typography>
+                                </Button>
+                                <Button
+                                    variant="text"
+                                    style={{
+                                        textTransform: "none",
+                                        // color: "white",
+                                        fontSize: "110%"
+                                    }}
+                                    onClick={this.onTopic3Click}
+                                    className={"header-bottom-buttons"}
+                                >
+                                    <Typography
+                                        variant="button"
+                                        className={classes.buttonText}
+                                    >
+                                        LGBTQ
+                                    </Typography>
+                                </Button>
+                                <Button
+                                    variant="text"
+                                    style={{
+                                        textTransform: "none",
+                                        // color: "white",
+                                        fontSize: "110%"
+                                    }}
+                                    onClick={this.onTopic4Click}
+                                    className={"header-bottom-buttons"}
+                                >
+                                    <Typography
+                                        variant="button"
+                                        className={classes.buttonText}
+                                    >
+                                        Abortion
+                                    </Typography>
+                                </Button>
+                                <Button
+                                    variant="text"
+                                    style={{
+                                        textTransform: "none",
+                                        // color: "white",
+                                        fontSize: "110%"
+                                    }}
+                                    onClick={this.onTopic5Click}
+                                    className={"header-bottom-buttons"}
+                                >
+                                    <Typography
+                                        variant="button"
+                                        className={classes.buttonText}
+                                    >
+                                        Gun Policy
+                                    </Typography>
+                                </Button>
 
                                 <MenuButtonComponent />
                             </div>
