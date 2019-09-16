@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://purplepundit.appspot.com/static/media/Banner.254a938f.jpg" alt="purple-pundit" border="2px black solid">
+<img src="https://purplepundit.appspot.com/static/media/Banner.254a938f.jpg" alt="purple-pundit" style="border:5px solid black">
 </div>
 
 <h1 align="center">PurplePundit.co</h1>
