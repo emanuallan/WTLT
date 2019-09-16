@@ -1,12 +1,12 @@
 <div align="center">
-<img src="https://aeserna.com/img/purple-pundit.jpg" alt="purple-pundit" border="0">
+<img src="https://aeserna.com/img/purple-pundit.jpg" alt="purple-pundit" border="1">
 </div>
 
 <h1 align="center">PurplePundit.co</h1>
 
 
 <div align="center">
-React web application that organizes the latest news articles according to their liberal & conservative bias using the <a href="https://newsapi.org/" target="_blank"> NewsAPI </a> and <a href="https://mediabiasfactcheck.com/" target="_blank">Media Bias Fact Checker</a>.
+React web application that organizes the latest news articles according to their <br/>liberal & conservative bias using the <a href="https://newsapi.org/" target="_blank"> NewsAPI </a> and <a href="https://mediabiasfactcheck.com/" target="_blank">Media Bias Fact Checker</a>.
   <br/> LIVE WEBSITE: https://purplepundit.co
 </div>
 
