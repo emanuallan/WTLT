@@ -23,7 +23,7 @@ Media Bias Fact Checker.
 ## 📦 Installation & Setup
 ```bash
 $ git clone https://github.com/emanuallan/WTLT.git
-$ cd cd WTLT
+$ cd WTLT
 $ yarn install
 $ yarn start
 ```
