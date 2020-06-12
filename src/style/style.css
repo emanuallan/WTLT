@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
 /* Controls the stylistic properties of the header */
 .header-wrapper {
-    border: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
     /* background: url('../assets/Banner.jpg'); */
 }
 
@@ -27,6 +27,7 @@
 
 .title-wrapper {
     text-align: center;
+    margin-bottom: 3em;
     /* background: lavender; */
 }
 
