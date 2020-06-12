@@ -39,6 +39,5 @@ $ yarn start
 - User activity tracking, so users can be informed about the articles they tend to click on 
 
 ## ❓ More info
-Purple Pundit was created not with
-the intent to encourage either political side, rather it was created to promote discussion, comprehension, and the well-informed individual.
-
+Your news, your way.
+There's more than one side to every story. With Purple Pundit, you can get the latest news from every angle, so that you can form an informed, insightful opinion. We don't have an agenda or ulterior motives. Our only goal is to deliver today's most relevant reporting from all sides of the aisle, in a new format.
